@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact | Kristina Pichugina" description="Neem contact op met Kristina Pichugina voor NT2 les op locatie in Friesland en Nederland.">
+  <section class="section">
+    <div class="container grid grid-2">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Neem contact op</h1>
+        <p class="lead">Heb je een vraag over Nederlandse les op locatie, een traject voor medewerkers of een intake? Ik denk graag met je mee.</p>
+        <p><strong>Kristina Pichugina</strong><br/>NT2 docent op locatie<br/>Friesland en heel Nederland</p>
+      </div>
+      <div class="surface card">
+        <form method="post" action="https://formspree.io/f/your-id">
+          <label>Naam
+            <input name="naam" required />
+          </label>
+          <label>E-mail
+            <input type="email" name="email" required />
+          </label>
+          <label>Onderwerp
+            <input name="onderwerp" required />
+          </label>
+          <label>Bericht
+            <textarea name="bericht" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

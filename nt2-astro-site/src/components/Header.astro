@@ -1,0 +1,24 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/nt2-cursus-op-locatie', label: 'NT2 op locatie' },
+  { href: '/nt2-cursus-friesland', label: 'Friesland' },
+  { href: '/nt2-voor-bedrijven', label: 'Voor bedrijven' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/offerte-aanvragen', label: 'Offerte aanvragen' },
+  { href: '/contact', label: 'Contact' }
+];
+---
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand">
+      Kristina Tjalsma
+      <small>NT2 cursus op locatie</small>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdnavigatie">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
