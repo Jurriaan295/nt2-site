@@ -1,35 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Offerte aanvragen | Kristina Pichugina" description="Vraag een offerte aan voor NT2 les op locatie. Binnen 24 uur reactie.">
+
+<BaseLayout title="Offerte aanvragen | Kristina Tjalsma" description="Vraag een offerte aan voor NT2 les op locatie. Binnen 24 uur reactie.">
   <section class="section">
     <div class="container grid grid-2">
+
       <div>
         <p class="eyebrow">Offerte aanvragen</p>
         <h1>Vraag een offerte aan voor NT2 les op locatie</h1>
-        <p class="lead">Ik maak een voorstel op maat op basis van locatie, aantal deelnemers, niveau en leerdoelen.</p>
-        <p>Binnen 24 uur ontvang je een reactie. Gebruik dit formulier als startpunt en koppel het later aan Formspree of een andere formulierdienst.</p>
+        <p class="lead">
+          Ik maak een voorstel op maat op basis van locatie, aantal deelnemers, niveau en leerdoelen.
+        </p>
+        <p>
+          Binnen 24 uur ontvang je een reactie.
+        </p>
       </div>
+
       <div class="surface card">
-        <form method="post" action="https://formspree.io/f/your-id">
+        <form method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
+
+          <input type="hidden" name="_subject" value="Nieuwe offerte aanvraag" />
+
           <label>Naam
             <input name="naam" required />
           </label>
+
           <label>Organisatie
             <input name="organisatie" />
           </label>
+
           <label>E-mail
             <input type="email" name="email" required />
           </label>
+
           <label>Telefoon
             <input name="telefoon" />
           </label>
+
           <label>Locatie
             <input name="locatie" required />
           </label>
+
           <label>Aantal deelnemers
             <input name="deelnemers" required />
           </label>
+
           <label>Type aanvraag
             <select name="type-aanvraag">
               <option>NT2 cursus op locatie</option>
@@ -38,12 +54,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <option>Anders</option>
             </select>
           </label>
+
           <label>Bericht
             <textarea name="bericht"></textarea>
           </label>
+
           <button class="btn btn-primary" type="submit">Verstuur aanvraag</button>
+
         </form>
       </div>
+
     </div>
   </section>
 </BaseLayout>
