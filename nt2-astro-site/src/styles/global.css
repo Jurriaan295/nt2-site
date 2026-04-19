@@ -514,10 +514,10 @@ textarea { min-height: 140px; resize: vertical; }
     margin-top: 0.2rem;
   }
 
-  /* H1 gecentreerd op mobiel, font kleiner zodat regel 1 op 1 lijn past */
+  /* H1 gecentreerd op mobiel — zo groot mogelijk, "locatie voor bedrijven" nooit wrappen */
   .hero-new-text h1 {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
   }
   /* Elke span = eigen regel, nooit afbreken */
   .h1-line1, .h1-line2 {
