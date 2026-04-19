@@ -479,6 +479,7 @@ textarea { min-height: 140px; resize: vertical; }
 .hero-eyebrow-mobile { display: none; }
 .hero-lead-mobile    { display: none; }
 .howworks-mobile     { display: none; }
+.howworks-between    { display: none; }
 
 /* H1 spans: op desktop gewoon inline naast elkaar */
 .h1-line1, .h1-line2 { display: inline; }
@@ -518,15 +519,14 @@ textarea { min-height: 140px; resize: vertical; }
   /* Hoe werkt het: origineel verbergen, mobiele variant tonen */
   .howworks-desktop { display: none; }
 
-  /* Zorg dat card niet clipt */
-  .particulieren-card { overflow: visible; }
-  .particulieren-card .card-body { padding-bottom: 1.75rem; }
+  /* Wrapper tussen de secties */
+  .howworks-between {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+  }
 
   .howworks-mobile {
-    display: block;
-    width: fit-content;
-    margin: 1rem auto 0;
-    text-align: center;
     background: transparent;
     border: 2.5px solid #7c3aed;
     color: #7c3aed;
