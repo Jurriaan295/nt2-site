@@ -517,6 +517,11 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* Hoe werkt het: origineel verbergen, mobiele variant tonen */
   .howworks-desktop { display: none; }
+
+  /* Zorg dat card niet clipt */
+  .particulieren-card { overflow: visible; }
+  .particulieren-card .card-body { padding-bottom: 1.75rem; }
+
   .howworks-mobile {
     display: block;
     width: fit-content;
@@ -529,21 +534,11 @@ textarea { min-height: 140px; resize: vertical; }
     padding: 1rem 2rem;
     border-radius: 999px;
     font-size: 1.05rem;
-    box-shadow: 0 4px 0 0 rgba(124, 58, 237, 0.35),
-                0 6px 12px rgba(124, 58, 237, 0.15);
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    transition: background 0.15s ease;
   }
   .howworks-mobile:hover {
-    background: rgba(124, 58, 237, 0.04);
+    background: rgba(124, 58, 237, 0.06);
     text-decoration: none;
-    box-shadow: 0 2px 0 0 rgba(124, 58, 237, 0.35),
-                0 4px 8px rgba(124, 58, 237, 0.12);
-    transform: translateY(2px);
-  }
-  .howworks-mobile:active {
-    box-shadow: 0 1px 0 0 rgba(124, 58, 237, 0.35),
-                0 2px 4px rgba(124, 58, 237, 0.1);
-    transform: translateY(3px);
   }
 
   /* VOOR WIE sectie: h2 weg, eyebrow groter */
