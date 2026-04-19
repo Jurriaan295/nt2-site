@@ -380,7 +380,7 @@ textarea { min-height: 140px; resize: vertical; }
 
 @media (max-width: 900px) {
   /* Ruimte voor vaste balk boven content */
-  body { padding-top: 56px; }
+  body { padding-top: 64px; }
 
   /* Vaste paarse balk — helemaal bovenaan, geen gap */
   .site-header {
@@ -402,7 +402,7 @@ textarea { min-height: 140px; resize: vertical; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 56px;
+    height: 64px;
     padding: 0 1rem;
     position: relative;
   }
@@ -417,10 +417,10 @@ textarea { min-height: 140px; resize: vertical; }
     pointer-events: auto;
   }
   .mobile-logo {
-    max-width: 150px;
-    max-height: 44px;
-    width: auto;
-    height: auto;
+    width: 110px;
+    height: 52px;
+    object-fit: contain;
+    object-position: center;
     display: block;
     mix-blend-mode: multiply;
   }
