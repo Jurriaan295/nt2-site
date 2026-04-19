@@ -417,12 +417,9 @@ textarea { min-height: 140px; resize: vertical; }
     pointer-events: auto;
   }
   .mobile-logo {
-    width: 110px;
-    height: 52px;
-    object-fit: contain;
-    object-position: center;
+    max-width: 180px;
+    height: auto;
     display: block;
-    mix-blend-mode: multiply;
   }
 
   /* Merknaam in balk */
