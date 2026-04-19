@@ -478,7 +478,9 @@ textarea { min-height: 140px; resize: vertical; }
 /* Desktop: mobiele elementen verborgen */
 .hero-eyebrow-mobile { display: none; }
 .hero-lead-mobile    { display: none; }
-br.mobile-break      { display: none; }
+
+/* H1 spans: op desktop gewoon inline naast elkaar */
+.h1-line1, .h1-line2 { display: inline; }
 
 @media (max-width: 900px) {
   /* Desktop eyebrow verbergen op mobiel */
@@ -512,8 +514,16 @@ br.mobile-break      { display: none; }
     margin-top: 0.2rem;
   }
 
-  /* H1 gecentreerd op mobiel */
-  .hero-new-text h1 { text-align: center; }
+  /* H1 gecentreerd op mobiel, font kleiner zodat regel 1 op 1 lijn past */
+  .hero-new-text h1 {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  /* Elke span = eigen regel, nooit afbreken */
+  .h1-line1, .h1-line2 {
+    display: block;
+    white-space: nowrap;
+  }
 
   /* Knoppen hero mobiel */
   .hero-btn-offerte { display: none; }
