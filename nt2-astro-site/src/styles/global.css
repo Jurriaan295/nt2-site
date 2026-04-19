@@ -518,16 +518,23 @@ textarea { min-height: 140px; resize: vertical; }
   .hero-btn-offerte { display: none; }
   .hero-btn-row { justify-content: center; }
   .hero-btn-contact {
-    background: #7c3aed;
-    border-color: #7c3aed;
-    color: #fff;
+    background: transparent;
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
     padding: 1rem 2rem;
     font-size: 1.05rem;
   }
   .hero-btn-contact:hover {
-    background: #6d28d9;
-    border-color: #6d28d9;
+    background: rgba(124, 58, 237, 0.06);
     text-decoration: none;
+  }
+
+  /* Trust-lists gecentreerd als blok */
+  .hero-lead-mobile,
+  .hero-new-text .trust-list {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Desktop lead verbergen, mobiele lijst tonen */
