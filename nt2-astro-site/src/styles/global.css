@@ -514,6 +514,10 @@ textarea { min-height: 140px; resize: vertical; }
     margin-top: 0.2rem;
   }
 
+  /* VOOR WIE sectie: h2 weg, eyebrow groter */
+  .doelgroepen-h2      { display: none; }
+  .doelgroepen-eyebrow { font-size: 1.15rem; margin-bottom: 1.25rem; }
+
   /* Minder zijpadding in hero zodat H1 meer ruimte krijgt (alleen de hero-container) */
   .hero-new .container {
     width: calc(100% - 1rem);
