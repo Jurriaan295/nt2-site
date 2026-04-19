@@ -515,20 +515,8 @@ textarea { min-height: 140px; resize: vertical; }
   .hero-lead-desktop { display: none; }
 
   .hero-lead-mobile {
-    display: flex;
-    justify-content: center;
-    margin: 0.75rem 0 0;
-  }
-  .hero-lead-mobile ul {
-    list-style: disc;
-    padding-left: 1.4rem;
-    margin: 0;
-    text-align: left;
-  }
-  .hero-lead-mobile ul li {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.7;
+    display: grid;
+    margin-top: 0.75rem;
   }
 
   /* Divider: lijn — punt — lijn */
