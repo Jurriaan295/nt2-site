@@ -475,8 +475,9 @@ textarea { min-height: 140px; resize: vertical; }
    HERO EYEBROW — mobiel bovenaan H1
 ═══════════════════════════════════════════ */
 
-/* Desktop: mobiele eyebrow verborgen */
+/* Desktop: mobiele elementen verborgen */
 .hero-eyebrow-mobile { display: none; }
+.hero-lead-mobile    { display: none; }
 
 @media (max-width: 900px) {
   /* Desktop eyebrow verbergen op mobiel */
@@ -508,6 +509,26 @@ textarea { min-height: 140px; resize: vertical; }
     text-transform: uppercase;
     color: #7c3aed;
     margin-top: 0.2rem;
+  }
+
+  /* Desktop lead verbergen, mobiele lijst tonen */
+  .hero-lead-desktop { display: none; }
+
+  .hero-lead-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 0.75rem 0 0;
+  }
+  .hero-lead-mobile ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+    margin: 0;
+    text-align: left;
+  }
+  .hero-lead-mobile ul li {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
   }
 
   /* Divider: lijn — punt — lijn */
