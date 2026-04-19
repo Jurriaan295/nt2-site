@@ -511,6 +511,9 @@ textarea { min-height: 140px; resize: vertical; }
     margin-top: 0.2rem;
   }
 
+  /* H1 gecentreerd op mobiel */
+  .hero-new-text h1 { text-align: center; }
+
   /* Desktop lead verbergen, mobiele lijst tonen */
   .hero-lead-desktop { display: none; }
 
