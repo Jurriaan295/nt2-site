@@ -369,3 +369,104 @@ textarea { min-height: 140px; resize: vertical; }
 @media (max-width: 480px) {
   .kpi-strip .kpi { min-width: 100%; }
 }
+
+/* ═══════════════════════════════════════════
+   MOBIELE HEADER — alleen op mobiel
+═══════════════════════════════════════════ */
+
+/* Desktop: mobiele elementen verbergen */
+.mobile-bar  { display: none; }
+.mobile-nav  { display: none; }
+
+@media (max-width: 900px) {
+  /* Ruimte voor vaste balk boven content */
+  body { padding-top: 56px; }
+
+  /* Vaste paarse balk — helemaal bovenaan, geen gap */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #7c3aed;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Desktop nav verbergen op mobiel */
+  .desktop-nav { display: none !important; }
+
+  /* Mobiele balk */
+  .mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 1rem;
+  }
+
+  /* Merknaam in balk */
+  .mobile-brand {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  .mobile-brand:hover { text-decoration: none; }
+
+  /* Hamburger-knop */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #fff;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Zoekknop */
+  .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Uitklapmenu */
+  .mobile-nav {
+    display: block;
+    background: #7c3aed;
+  }
+  .mobile-nav[hidden] { display: none; }
+  .mobile-nav a {
+    display: block;
+    padding: 0.9rem 1.25rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    text-decoration: none;
+  }
+  .mobile-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+  .mobile-nav a:last-child { border-bottom: none; }
+}

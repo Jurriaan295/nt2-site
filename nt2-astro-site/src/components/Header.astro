@@ -10,7 +10,32 @@ const links = [
 ];
 ---
 <header class="site-header">
-  <div class="container nav">
+
+  <!-- ── Mobiele balk (alleen zichtbaar op mobiel) ── -->
+  <div class="mobile-bar">
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="mobile-brand">Kristina Tjalsma</a>
+    <button class="search-btn" id="searchBtn" aria-label="Zoeken">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ── Mobiel uitklapmenu ── -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobiele navigatie" hidden>
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+
+  <!-- ── Desktop navigatie (ongewijzigd) ── -->
+  <div class="container nav desktop-nav">
     <a href="/" class="brand">
       Kristina Tjalsma
       <small>NT2 cursus op locatie</small>
@@ -21,4 +46,25 @@ const links = [
       ))}
     </nav>
   </div>
+
 </header>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = !mobileNav?.hidden;
+    if (mobileNav) mobileNav.hidden = isOpen;
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    hamburger.classList.toggle('open', !isOpen);
+  });
+
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileNav) mobileNav.hidden = true;
+      hamburger?.setAttribute('aria-expanded', 'false');
+      hamburger?.classList.remove('open');
+    });
+  });
+</script>
