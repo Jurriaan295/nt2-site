@@ -557,6 +557,10 @@ textarea { min-height: 140px; resize: vertical; }
   /* btn-row inline margin neutraliseren zodat knop zelf de spacing bepaalt */
   .about-btn-row { margin-top: 0 !important; }
 
+  /* Sectie padding reduceren zodat knop visueel gebalanceerd staat */
+  .about-kristina-section { padding-bottom: 1.5rem; }
+  .kpi-section            { padding-top: 1.5rem; }
+
   /* Knop "Offerte aanvragen" → outline paars, identiek aan "Neem contact op" */
   .about-offerte-btn {
     display: block;
