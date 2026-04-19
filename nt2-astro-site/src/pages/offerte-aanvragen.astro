@@ -17,12 +17,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
-      <div class="surface card">
-        <!-- Succesmelding (standaard verborgen) -->
-        <div id="form-success" style="display:none;">
+      <div class="surface card" id="offerte-card">
+        <div id="offerte-success" style="display:none; padding: 1rem 0;">
           <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
-          <p style="font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">Bedankt! Je aanvraag is verzonden.</p>
-          <p style="color:var(--muted);">Je hoort binnen 24 uur van mij.</p>
+          <p style="font-weight:700; font-size:1.1rem; margin-bottom:0;">Bedankt! Je aanvraag is verzonden.</p>
         </div>
 
         <form id="offerte-form" method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
@@ -75,8 +73,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script>
-    const form = document.getElementById('offerte-form');
-    const success = document.getElementById('form-success');
+    const form = document.getElementById('offerte-form') as HTMLFormElement;
+    const success = document.getElementById('offerte-success');
+    const card = document.getElementById('offerte-card');
 
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -92,7 +91,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         if (res.ok) {
           form.style.display = 'none';
-          success.style.display = 'block';
+          if (success) success.style.display = 'block';
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           alert('Er is iets misgegaan. Probeer het opnieuw of stuur een e-mail.');
         }

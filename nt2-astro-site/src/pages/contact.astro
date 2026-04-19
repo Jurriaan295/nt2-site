@@ -21,8 +21,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
-      <div class="surface card">
-        <form method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
+      <div class="surface card" id="contact-card">
+        <div id="contact-success" style="display:none; padding: 1rem 0;">
+          <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
+          <p style="font-weight:700; font-size:1.1rem; margin-bottom:0;">Bedankt! Je bericht is verzonden.</p>
+        </div>
+
+        <form id="contact-form" method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
 
           <input type="hidden" name="_subject" value="Nieuwe aanvraag via website" />
 
@@ -45,4 +50,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const success = document.getElementById('contact-success');
+    const card = document.getElementById('contact-card');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          if (success) success.style.display = 'block';
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          alert('Er is iets misgegaan. Probeer het opnieuw of stuur een e-mail.');
+        }
+      } catch {
+        alert('Er is iets misgegaan. Controleer je internetverbinding.');
+      }
+    });
+  </script>
 </BaseLayout>
