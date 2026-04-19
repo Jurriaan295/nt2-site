@@ -529,12 +529,14 @@ textarea { min-height: 140px; resize: vertical; }
     text-decoration: none;
   }
 
-  /* Trust-lists gecentreerd als blok */
+  /* Trust-lists: elk item (icoon + tekst) gecentreerd */
   .hero-lead-mobile,
   .hero-new-text .trust-list {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+  }
+  .hero-lead-mobile li,
+  .hero-new-text .trust-list li {
+    justify-content: center;
   }
 
   /* Desktop lead verbergen, mobiele lijst tonen */
