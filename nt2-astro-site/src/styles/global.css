@@ -470,3 +470,66 @@ textarea { min-height: 140px; resize: vertical; }
   }
   .mobile-nav a:last-child { border-bottom: none; }
 }
+
+/* ═══════════════════════════════════════════
+   HERO EYEBROW — mobiel bovenaan H1
+═══════════════════════════════════════════ */
+
+/* Desktop: mobiele eyebrow verborgen */
+.hero-eyebrow-mobile { display: none; }
+
+@media (max-width: 900px) {
+  /* Desktop eyebrow verbergen op mobiel */
+  .hero-eyebrow-desktop { display: none; }
+
+  /* Mobiele eyebrow tonen */
+  .hero-eyebrow-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-label-top {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7c3aed;
+  }
+
+  .hero-label-sub {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin-top: 0.2rem;
+  }
+
+  /* Divider: lijn — punt — lijn */
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+    width: 160px;
+  }
+
+  .hero-divider-line {
+    flex: 1;
+    height: 1px;
+    background: #7c3aed;
+  }
+
+  .hero-divider-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #7c3aed;
+    flex-shrink: 0;
+  }
+}

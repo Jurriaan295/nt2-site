@@ -9,7 +9,18 @@ const description = 'Praktische NT2 cursussen op locatie voor bedrijven, gemeent
   <section class="hero-new">
     <div class="container hero-new-grid">
       <div class="hero-new-text">
-        <p class="eyebrow">NT2 cursus op locatie · Friesland &amp; Nederland</p>
+        <!-- Desktop eyebrow (ongewijzigd) -->
+        <p class="eyebrow hero-eyebrow-desktop">NT2 cursus op locatie · Friesland &amp; Nederland</p>
+        <!-- Mobiele eyebrow (alleen op mobiel zichtbaar) -->
+        <div class="hero-eyebrow-mobile" aria-hidden="false">
+          <span class="hero-label-top">NT2 op locatie</span>
+          <span class="hero-label-sub">Friesland &amp; Nederland</span>
+          <div class="hero-divider" aria-hidden="true">
+            <span class="hero-divider-line"></span>
+            <span class="hero-divider-dot"></span>
+            <span class="hero-divider-line"></span>
+          </div>
+        </div>
         <h1>Nederlandse les op locatie voor bedrijven</h1>
         <p class="lead">Praktisch, persoonlijk en direct toepasbaar op de werkvloer.</p>
         <div class="btn-row" style="margin-top: 2rem;">
