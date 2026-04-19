@@ -554,6 +554,33 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(3px);
   }
 
+  /* Knop "Offerte aanvragen" → outline paars, identiek aan "Neem contact op" */
+  .about-offerte-btn {
+    background: transparent !important;
+    border: 2.5px solid #7c3aed !important;
+    color: #7c3aed !important;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 0 0 rgba(124, 58, 237, 0.35),
+                0 6px 12px rgba(124, 58, 237, 0.15);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .about-offerte-btn:hover {
+    background: rgba(124, 58, 237, 0.04) !important;
+    text-decoration: none;
+    box-shadow: 0 2px 0 0 rgba(124, 58, 237, 0.35),
+                0 4px 8px rgba(124, 58, 237, 0.12);
+    transform: translateY(2px);
+  }
+
+  /* Check-list blokken: tekst centreren + paarse rand */
+  .about-check-list li {
+    text-align: center;
+    border-color: #7c3aed;
+    border-width: 1.5px;
+    justify-content: center;
+  }
+
   /* VOOR WIE sectie: h2 weg, eyebrow groter */
   .doelgroepen-h2      { display: none; }
   .doelgroepen-eyebrow { font-size: 1.15rem; margin-bottom: 1.25rem; }
