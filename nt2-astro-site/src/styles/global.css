@@ -556,6 +556,9 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* Knop "Offerte aanvragen" → outline paars, identiek aan "Neem contact op" */
   .about-offerte-btn {
+    display: block;
+    width: fit-content;
+    margin: 1.5rem auto;
     background: transparent !important;
     border: 2.5px solid #7c3aed !important;
     color: #7c3aed !important;
