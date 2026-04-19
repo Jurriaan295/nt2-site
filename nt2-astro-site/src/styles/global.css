@@ -404,6 +404,22 @@ textarea { min-height: 140px; resize: vertical; }
     justify-content: space-between;
     height: 56px;
     padding: 0 1rem;
+    position: relative;
+  }
+
+  /* Logo gecentreerd via absolute positioning */
+  .mobile-logo-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+  }
+  .mobile-logo {
+    max-height: 34px;
+    width: auto;
+    display: block;
   }
 
   /* Merknaam in balk */
