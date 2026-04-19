@@ -478,6 +478,7 @@ textarea { min-height: 140px; resize: vertical; }
 /* Desktop: mobiele elementen verborgen */
 .hero-eyebrow-mobile { display: none; }
 .hero-lead-mobile    { display: none; }
+.howworks-mobile     { display: none; }
 
 /* H1 spans: op desktop gewoon inline naast elkaar */
 .h1-line1, .h1-line2 { display: inline; }
@@ -512,6 +513,25 @@ textarea { min-height: 140px; resize: vertical; }
     text-transform: uppercase;
     color: #7c3aed;
     margin-top: 0.2rem;
+  }
+
+  /* Hoe werkt het: origineel verbergen, mobiele variant tonen */
+  .howworks-desktop { display: none; }
+  .howworks-mobile {
+    display: inline-flex;
+    margin-top: 1rem;
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+  .howworks-mobile:hover {
+    background: #6d28d9;
+    border-color: #6d28d9;
+    text-decoration: none;
   }
 
   /* VOOR WIE sectie: h2 weg, eyebrow groter */
