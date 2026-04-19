@@ -514,6 +514,22 @@ textarea { min-height: 140px; resize: vertical; }
   /* H1 gecentreerd op mobiel */
   .hero-new-text h1 { text-align: center; }
 
+  /* Knoppen hero mobiel */
+  .hero-btn-offerte { display: none; }
+  .hero-btn-row { justify-content: center; }
+  .hero-btn-contact {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+  }
+  .hero-btn-contact:hover {
+    background: #6d28d9;
+    border-color: #6d28d9;
+    text-decoration: none;
+  }
+
   /* Desktop lead verbergen, mobiele lijst tonen */
   .hero-lead-desktop { display: none; }
 
