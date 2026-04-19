@@ -554,6 +554,9 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(3px);
   }
 
+  /* btn-row inline margin neutraliseren zodat knop zelf de spacing bepaalt */
+  .about-btn-row { margin-top: 0 !important; }
+
   /* Knop "Offerte aanvragen" → outline paars, identiek aan "Neem contact op" */
   .about-offerte-btn {
     display: block;
@@ -576,11 +579,10 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(2px);
   }
 
-  /* Check-list blokken: tekst centreren + paarse rand */
+  /* Check-list blokken: tekst centreren + dunne paarse rand */
   .about-check-list li {
     text-align: center;
-    border-color: #7c3aed;
-    border-width: 1.5px;
+    border: 1px solid #7c3aed;
     justify-content: center;
   }
 
