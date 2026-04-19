@@ -527,6 +527,9 @@ textarea { min-height: 140px; resize: vertical; }
   }
 
   .howworks-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: 2.5px solid #7c3aed;
     color: #7c3aed;
