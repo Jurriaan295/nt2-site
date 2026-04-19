@@ -478,6 +478,7 @@ textarea { min-height: 140px; resize: vertical; }
 /* Desktop: mobiele elementen verborgen */
 .hero-eyebrow-mobile { display: none; }
 .hero-lead-mobile    { display: none; }
+br.mobile-break      { display: none; }
 
 @media (max-width: 900px) {
   /* Desktop eyebrow verbergen op mobiel */
