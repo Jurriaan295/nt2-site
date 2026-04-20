@@ -714,6 +714,12 @@ textarea { min-height: 140px; resize: vertical; }
     gap: 0.85rem;
   }
 
+  .cta-final-btn-row .snel-offerte-btn {
+    width: fit-content;
+    min-width: 220px;
+    text-align: center;
+  }
+
 
   /* Footer – mobiel */
   .footer-grid {
@@ -731,10 +737,10 @@ textarea { min-height: 140px; resize: vertical; }
     display: block;
   }
 
-  /* Afsluitende CTA sectie: witte achtergrond op mobiel zodat knoppen identiek zijn */
+  /* Afsluitende CTA sectie: zelfde mint-achtergrond als "Klaar om te starten?" */
   .cta-strip-strong {
-    background: #fff;
-    border: 1px solid var(--line);
+    background: linear-gradient(145deg, #f0f8fa, #e6f4f6);
+    border: 1px solid #b8dde4;
   }
   .cta-strip-strong h2,
   .cta-strip-strong p { color: inherit; }
