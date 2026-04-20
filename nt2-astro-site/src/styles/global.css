@@ -619,6 +619,11 @@ textarea { min-height: 140px; resize: vertical; }
   .resultaten-eyebrow,
   .resultaten-h2 { text-align: center; }
 
+  /* Resultaten blokken: zelfde paarse border als about-check-list */
+  .resultaten-check-list li {
+    border: 1px solid #7c3aed;
+  }
+
   /* H1 zo breed mogelijk — vw-gebaseerd, nooit 3 regels */
   .hero-new-text h1 {
     text-align: center;
