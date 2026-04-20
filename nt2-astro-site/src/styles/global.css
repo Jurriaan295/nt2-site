@@ -618,6 +618,10 @@ textarea { min-height: 140px; resize: vertical; }
   .about-kristina-section { padding-bottom: 1.5rem; }
   .kpi-section            { padding-top: 1.5rem; }
 
+  /* Over de docent – eyebrow en h2 centreren op mobiel */
+  .about-eyebrow,
+  .about-h2 { text-align: center; }
+
   /* Knop "Offerte aanvragen" → outline paars, identiek aan "Neem contact op" */
   .about-offerte-btn {
     display: block;
