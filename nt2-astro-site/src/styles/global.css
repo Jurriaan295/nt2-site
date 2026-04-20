@@ -653,6 +653,45 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(2px);
   }
 
+  /* Afsluitende CTA sectie – mobiel */
+  .cta-text-block {
+    text-align: center;
+  }
+
+  .cta-final-h2,
+  .cta-final-p {
+    text-align: center;
+  }
+
+  .cta-final-btn-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .cta-final-btn {
+    display: block;
+    width: fit-content;
+    background: transparent !important;
+    border: 2.5px solid #7c3aed !important;
+    color: #7c3aed !important;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 0 0 rgba(124, 58, 237, 0.35),
+                0 6px 12px rgba(124, 58, 237, 0.15);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    text-align: center;
+  }
+
+  .cta-final-btn:hover {
+    background: rgba(124, 58, 237, 0.04) !important;
+    text-decoration: none;
+    box-shadow: 0 2px 0 0 rgba(124, 58, 237, 0.35),
+                0 4px 8px rgba(124, 58, 237, 0.12);
+    transform: translateY(2px);
+  }
+
   /* Resultaten blokken: zelfde paarse border als about-check-list */
   .resultaten-check-list li {
     border: 1px solid #7c3aed;
