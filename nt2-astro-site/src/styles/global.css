@@ -623,6 +623,36 @@ textarea { min-height: 140px; resize: vertical; }
   .prijs-eyebrow,
   .prijs-h2 { text-align: center; }
 
+  /* Snel schakelen sectie – mobiel */
+  .snel-eyebrow,
+  .snel-h2 { text-align: center; }
+
+  .snel-btn-row {
+    justify-content: center;
+  }
+
+  .snel-offerte-btn {
+    background: #7c3aed;
+    color: #fff;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    padding: 0.85rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .snel-offerte-btn:hover,
+  .snel-offerte-btn:active {
+    background: #6d28d9;
+    border-color: #6d28d9;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+    transform: translateY(-1px);
+  }
+
   /* Resultaten blokken: zelfde paarse border als about-check-list */
   .resultaten-check-list li {
     border: 1px solid #7c3aed;
