@@ -619,6 +619,10 @@ textarea { min-height: 140px; resize: vertical; }
   .resultaten-eyebrow,
   .resultaten-h2 { text-align: center; }
 
+  /* Prijsindicatie titels centreren op mobiel */
+  .prijs-eyebrow,
+  .prijs-h2 { text-align: center; }
+
   /* Resultaten blokken: zelfde paarse border als about-check-list */
   .resultaten-check-list li {
     border: 1px solid #7c3aed;
