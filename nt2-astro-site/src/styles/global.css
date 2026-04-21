@@ -798,7 +798,7 @@ textarea { min-height: 140px; resize: vertical; }
     position: absolute;
     inset: 0;
     background: url('/images/reviews-background-books.png') center/cover no-repeat;
-    filter: blur(0.5px);
+    filter: blur(0.5px) brightness(1.5);
     z-index: 0;
   }
 
@@ -810,8 +810,8 @@ textarea { min-height: 140px; resize: vertical; }
     background: linear-gradient(
       to bottom,
       #f7f8fa          0%,
-      rgba(18,6,40,0.35) 18%,
-      rgba(18,6,40,0.35) 82%,
+      rgba(18,6,40,0.35) 10%,
+      rgba(18,6,40,0.35) 90%,
       #f7f8fa          100%
     );
     z-index: 1;
