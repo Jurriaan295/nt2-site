@@ -784,13 +784,13 @@ textarea { min-height: 140px; resize: vertical; }
     overflow: hidden;
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
-    height: 405px;       /* zelfde hoogte als .review-slider */
+    height: 350px;       /* zelfde hoogte als .review-slider */
   }
 
   .review-slider {
     position: relative;  /* containing block voor de absolute track */
     width: 100%;         /* = 100vw van de wrapper */
-    height: 405px;
+    height: 350px;
     overflow: hidden;    /* knipt de slides rechts af */
   }
 
@@ -852,16 +852,25 @@ textarea { min-height: 140px; resize: vertical; }
 
   .review-text {
     color: #fff;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.7;
     font-style: italic;
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.75rem;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Aanhalingstekens extra groot */
+  .review-text::first-letter {
+    font-size: 3.5rem;
+    line-height: 0.6;
+    vertical-align: -0.45em;
+    color: #fff;
+    font-style: normal;
   }
 
   .review-name {
     color: rgba(255, 255, 255, 0.72);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     margin: 0;
