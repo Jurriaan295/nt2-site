@@ -797,7 +797,7 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background: url('/images/review-slider-bg.png') center/cover no-repeat;
+    background: url('/images/reviews-background-books.png') center/cover no-repeat;
     filter: blur(3px);
     z-index: 0;
   }
