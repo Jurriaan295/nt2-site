@@ -19,7 +19,6 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -739,35 +738,37 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* ── Review Slider ──────────────────────────────── */
 
-  /* Wrapper: zelfde breedte als omgeving, nooit breder */
+  /*
+   * LAYOUT-ISOLATIE:
+   * contain: layout voorkomt dat de slider ooit de pagina-breedte beïnvloedt.
+   * overflow: clip knipt de inhoud af zonder een scroll-context te maken
+   * (sterker dan overflow:hidden voor layout-overflow-doeleinden).
+   */
   .review-slider-wrap {
+    contain: layout;
+    overflow: clip;
     width: 100%;
-    max-width: 100%;
     margin: 1.75rem 0;
-    overflow: hidden;       /* ← KRITIEK: voorkomt horizontale overflow */
   }
 
-  /* Slider: expliciete breedte zodat track correct wordt berekend */
   .review-slider {
     position: relative;
-    width: 100%;            /* ← KRITIEK: zonder dit wordt breedte = 3 × slides */
+    width: 100%;
     height: 270px;
-    overflow: hidden;
+    overflow: clip;
     border-radius: 12px;
-    box-sizing: border-box;
   }
 
-  /* Achtergrond met subtiele blur */
+  /* Achtergrond: geen negatieve inset (vermijdt overflow) */
   .review-bg {
     position: absolute;
-    inset: -8px;
+    inset: 0;
     background: url('/images/review-slider-bg.png') center/cover no-repeat;
     filter: blur(3px);
-    transform: scale(1.05);
     z-index: 0;
   }
 
-  /* Overlay: donker genoeg om afbeeldingstekst te verbergen */
+  /* Overlay */
   .review-overlay {
     position: absolute;
     inset: 0;
@@ -775,26 +776,26 @@ textarea { min-height: 140px; resize: vertical; }
     z-index: 1;
   }
 
-  /* Track: MOET width: 100% hebben — anders berekent browser breedte verkeerd */
+  /* Track */
   .review-track {
     display: flex;
-    width: 100%;            /* ← KRITIEK */
+    width: 100%;
     height: 100%;
     position: relative;
     z-index: 2;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Elke slide: vaste breedte = 100% van slider */
+  /* Slides */
   .review-slide {
-    flex: 0 0 100%;         /* ← KRITIEK: niet min-width maar flex shorthand */
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 3rem;
+    padding: 2.25rem 3rem;
     text-align: center;
     box-sizing: border-box;
   }
@@ -816,7 +817,7 @@ textarea { min-height: 140px; resize: vertical; }
     margin: 0;
   }
 
-  /* Navigatiepijlen */
+  /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:clip) */
   .review-arrow {
     position: absolute;
     top: 50%;
