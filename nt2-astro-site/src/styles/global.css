@@ -779,17 +779,18 @@ textarea { min-height: 140px; resize: vertical; }
    * .review-slider (position:relative) is het containing block.
    */
   .review-slider-wrap {
-    width: 100vw;          /* volledige schermbreedte */
-    margin-left: -1rem;    /* breekt uit de container-marge (1rem links) */
-    overflow: hidden;
-    margin-top: 1.75rem;
-    margin-bottom: 1.75rem;
+    position: relative; /* positioned ancestor voor de absolute .review-slider */
+    width: 100%;        /* veilig: grid-layout ongewijzigd */
+    height: 270px;      /* reserveert ruimte in de flow */
+    overflow: visible;  /* laat .review-slider buiten de wrapper steken */
+    margin: 1.75rem 0;
   }
 
   .review-slider {
-    position: relative; /* containing block voor de absolute track */
-    width: 100%;
-    height: 270px;
+    position: absolute; /* volledig uit de flow → grid/portrait onaangetast */
+    left: -1rem;        /* compenseert container-marge → links op viewport-rand */
+    width: 100vw;       /* volledige schermbreedte */
+    height: 100%;       /* = 270px van de wrapper */
     overflow: hidden;   /* knipt de slides rechts van het zichtvenster af */
     border-radius: 12px;
   }
