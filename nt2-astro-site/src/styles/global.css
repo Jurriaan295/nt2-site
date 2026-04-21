@@ -175,7 +175,10 @@ textarea { min-height: 140px; resize: vertical; }
 .footer-contact-mobile { display: none; }
 
 /* Review slider – verborgen op desktop */
-.review-slider-wrap { display: none; }
+.review-slider-wrap { display: none !important; }
+@media (max-width: 900px) {
+  .review-slider-wrap { display: block !important; }
+}
 
 /* Footer contact-links met icoon */
 .footer-contact-list li {
@@ -407,7 +410,7 @@ textarea { min-height: 140px; resize: vertical; }
   .kpi-divider { display: none; }
   .kpi-strip .kpi { min-width: calc(50% - 1rem); }
   .cert-img { height: 220px; }
-  .hero-new { padding: 3rem 0 2.5rem; }
+  .hero-new { padding: 1.25rem 0 2rem; }
 }
 
 @media (max-width: 480px) {
@@ -735,7 +738,6 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* ── Review Slider ── */
   .review-slider-wrap {
-    display: block;
     margin: 1.5rem 0;
   }
 
@@ -746,41 +748,22 @@ textarea { min-height: 140px; resize: vertical; }
     border-radius: 12px;
   }
 
-  /* Achtergrondafbeelding – subtiele blur zodat detail zichtbaar blijft */
+  /* Achtergrond: subtiele foto met lichte blur */
   .review-bg {
     position: absolute;
     inset: -6px;
     background: url('/images/review-slider-bg.png') center/cover no-repeat;
-    filter: blur(2px);
-    transform: scale(1.03);
+    filter: blur(3px);
+    transform: scale(1.04);
     z-index: 0;
   }
 
-  /* Donkere overlay voor leesbaarheid – foto blijft zichtbaar */
+  /* Zware overlay zodat eventuele afbeeldingstekst volledig verdwijnt */
   .review-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(25, 10, 50, 0.58);
+    background: rgba(20, 8, 45, 0.82);
     z-index: 1;
-  }
-
-  /* Vervagende randen boven en onder */
-  .review-fade-top {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 48px;
-    background: linear-gradient(to bottom, #fff, transparent);
-    z-index: 4;
-    pointer-events: none;
-  }
-
-  .review-fade-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 48px;
-    background: linear-gradient(to top, #fff, transparent);
-    z-index: 4;
-    pointer-events: none;
   }
 
   /* Slide track */
