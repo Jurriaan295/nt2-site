@@ -12,7 +12,10 @@
   --shadow: 0 10px 30px rgba(24, 48, 58, 0.08);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip; /* voorkomt dat ink-overflow (shadows) horizontale scroll veroorzaakt */
+}
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -623,6 +626,30 @@ textarea { min-height: 140px; resize: vertical; }
   /* Sectie padding reduceren zodat knop visueel gebalanceerd staat */
   .about-kristina-section { padding-bottom: 1.5rem; }
   .kpi-section            { padding-top: 1.5rem; }
+
+  /*
+   * SHADOW-OVERFLOW FIX:
+   * Op mobiel heeft .container 16px marge links/rechts.
+   * blur van 30px (--shadow), 40px (--shadow-md) en 60px (--shadow-lg)
+   * steken ver voorbij de viewport-rand.
+   * Oplossing: alle shadows beperken tot max 8–12px blur op mobiel.
+   */
+  .surface {
+    box-shadow: 0 2px 8px rgba(24, 48, 58, 0.08);
+  }
+  .hero-portrait {
+    box-shadow: 0 2px 8px rgba(24, 48, 58, 0.10);
+  }
+  .about-portrait {
+    box-shadow: 0 2px 8px rgba(24, 48, 58, 0.10);
+  }
+  .cert-wrap {
+    box-shadow: 0 2px 8px rgba(24, 48, 58, 0.08);
+  }
+  .card-hover:hover {
+    box-shadow: 0 4px 12px rgba(24, 48, 58, 0.12);
+    transform: none; /* geen translateY op touch */
+  }
 
   /* Over de docent – eyebrow en h2 centreren op mobiel */
   .about-eyebrow,
