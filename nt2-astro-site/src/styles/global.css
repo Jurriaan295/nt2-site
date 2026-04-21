@@ -779,10 +779,11 @@ textarea { min-height: 140px; resize: vertical; }
    * .review-slider (position:relative) is het containing block.
    */
   .review-slider-wrap {
-    width: 100%;
-    overflow: hidden;   /* vangnet voor inktvlekken */
-    margin: 1.75rem 0;
-    /* contain: layout verwijderd — niet nodig want track is abs. gepositioneerd */
+    width: 100vw;          /* volledige schermbreedte */
+    margin-left: -1rem;    /* breekt uit de container-marge (1rem links) */
+    overflow: hidden;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .review-slider {
