@@ -766,15 +766,17 @@ textarea { min-height: 140px; resize: vertical; }
   /* ── Review Slider ──────────────────────────────── */
 
   /*
-   * LAYOUT-ISOLATIE:
-   * contain: layout voorkomt dat de slider ooit de pagina-breedte beïnvloedt.
-   * overflow: clip knipt de inhoud af zonder een scroll-context te maken
-   * (sterker dan overflow:hidden voor layout-overflow-doeleinden).
+   * OVERFLOW FIX – uitleg:
+   * overflow: clip knipt alleen het schilderen af, maar maakt GEEN scroll-container.
+   * Zonder scroll-container telt de browser de 300%-brede track (3 slides × 100%)
+   * gewoon mee voor de scroll-breedte van de pagina → horizontale overflow.
+   * overflow: hidden maakt wél een scroll-container → scroll-breedte wordt
+   * afgekapt op de container-breedte → pagina blijft precies schermbreedte.
    */
   .review-slider-wrap {
-    contain: layout;
-    overflow: clip;
     width: 100%;
+    overflow: hidden;   /* maakt scroll-container: knipt ook scroll-breedte af */
+    contain: layout;    /* extra isolatie: inhoud beïnvloedt nooit buiten-layout */
     margin: 1.75rem 0;
   }
 
@@ -782,11 +784,11 @@ textarea { min-height: 140px; resize: vertical; }
     position: relative;
     width: 100%;
     height: 270px;
-    overflow: clip;
+    overflow: hidden;   /* KEY: scroll-container → 3 slides claimen geen 300% breedte */
     border-radius: 12px;
   }
 
-  /* Achtergrond: geen negatieve inset (vermijdt overflow) */
+  /* Achtergrond */
   .review-bg {
     position: absolute;
     inset: 0;
@@ -803,19 +805,22 @@ textarea { min-height: 140px; resize: vertical; }
     z-index: 1;
   }
 
-  /* Track */
+  /* Track: de drie slides naast elkaar */
   .review-track {
     display: flex;
-    width: 100%;
+    width: 100%;        /* flex container = slider-breedte; slides overlopen rechts */
     height: 100%;
     position: relative;
     z-index: 2;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform; /* GPU-composite: geen layout-recalc bij translateX */
   }
 
-  /* Slides */
+  /* Slides: elk precies de breedte van de slider */
   .review-slide {
-    flex: 0 0 100%;
+    flex: 0 0 100%;     /* 100% = slider-breedte, niet meer */
+    min-width: 0;       /* voorkomt flex-blowout */
+    max-width: 100%;    /* belt-and-suspenders */
     width: 100%;
     height: 100%;
     display: flex;
@@ -844,7 +849,7 @@ textarea { min-height: 140px; resize: vertical; }
     margin: 0;
   }
 
-  /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:clip) */
+  /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:hidden op .review-slider) */
   .review-arrow {
     position: absolute;
     top: 50%;
