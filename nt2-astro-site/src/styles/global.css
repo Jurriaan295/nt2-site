@@ -784,13 +784,13 @@ textarea { min-height: 140px; resize: vertical; }
     overflow: hidden;
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
-    height: 310px;       /* zelfde hoogte als .review-slider */
+    height: 420px;       /* zelfde hoogte als .review-slider */
   }
 
   .review-slider {
     position: relative;  /* containing block voor de absolute track */
     width: 100%;         /* = 100vw van de wrapper */
-    height: 310px;
+    height: 420px;
     overflow: hidden;    /* knipt de slides rechts af */
   }
 
@@ -798,7 +798,7 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background: url('/images/reviews-background-books.png') center/cover no-repeat;
+    background: url('/images/reviews-background-books.png') center/auto 310px no-repeat;
     filter: blur(0.5px) brightness(1.5);
     z-index: 0;
   }
