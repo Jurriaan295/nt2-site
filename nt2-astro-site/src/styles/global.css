@@ -707,6 +707,7 @@ textarea { min-height: 140px; resize: vertical; }
 
   .snel-btn-row {
     justify-content: center;
+    display: none;
   }
 
   .snel-offerte-btn {
