@@ -624,7 +624,7 @@ textarea { min-height: 140px; resize: vertical; }
   .about-btn-row { margin-top: 0 !important; }
 
   /* Sectie padding reduceren zodat knop visueel gebalanceerd staat */
-  .about-kristina-section { padding-bottom: 1.5rem; }
+  .about-kristina-section { padding-bottom: 0; }
   .kpi-section            { padding-top: 1.5rem; }
 
   /*
