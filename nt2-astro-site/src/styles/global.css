@@ -782,15 +782,15 @@ textarea { min-height: 140px; resize: vertical; }
     width: 100vw;        /* volledige schermbreedte */
     margin-left: -1rem;  /* compenseert container-marge links */
     overflow: hidden;
-    margin-top: 1.75rem;
-    margin-bottom: 1.75rem;
-    height: 420px;       /* zelfde hoogte als .review-slider */
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    height: 360px;       /* zelfde hoogte als .review-slider */
   }
 
   .review-slider {
     position: relative;  /* containing block voor de absolute track */
     width: 100%;         /* = 100vw van de wrapper */
-    height: 420px;
+    height: 360px;
     overflow: hidden;    /* knipt de slides rechts af */
   }
 
