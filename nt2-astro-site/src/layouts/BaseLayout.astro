@@ -19,18 +19,52 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo2.png" />
+    <link rel="apple-touch-icon" href="/images/logo2.png" />
+
+    <!-- Open Graph / Social media -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://nt2-site.vercel.app/images/kristina.jpeg" />
+    <meta property="og:image:width" content="540" />
+    <meta property="og:image:height" content="620" />
+    <meta property="og:site_name" content="TaalPartner – NT2 les op locatie" />
+    <meta property="og:locale" content="nl_NL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://nt2-site.vercel.app/images/kristina.jpeg" />
+
     <slot name="head" />
+
+    <!-- Schema.org: LocalBusiness + EducationalOrganization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'EducationalOrganization',
-      name: 'Kristina Pichugina',
-      description,
-      areaServed: 'Friesland en Nederland',
-      knowsAbout: ['NT2', 'Nederlandse les', 'in-company taaltraining']
+      '@type': ['EducationalOrganization', 'LocalBusiness'],
+      name: 'TaalPartner – Kristina Tjalsma',
+      description: 'Praktische NT2 cursussen op locatie voor bedrijven en particulieren in Friesland en heel Nederland.',
+      url: 'https://nt2-site.vercel.app',
+      logo: 'https://nt2-site.vercel.app/images/logo2.png',
+      image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
+      telephone: '',
+      email: 'englishdutchtutor@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Friesland',
+        addressCountry: 'NL'
+      },
+      areaServed: [
+        { '@type': 'State', name: 'Friesland' },
+        { '@type': 'Country', name: 'Nederland' }
+      ],
+      knowsAbout: ['NT2', 'Nederlandse les', 'in-company taaltraining', 'Nederlands leren', 'taaltraining op locatie'],
+      sameAs: ['https://www.instagram.com/englishdutchtutor']
     })}></script>
   </head>
   <body>

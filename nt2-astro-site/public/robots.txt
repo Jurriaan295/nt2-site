@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://example.com/sitemap-index.xml
+Disallow: /offerte-aanvragen
+Sitemap: https://nt2-site.vercel.app/sitemap.xml

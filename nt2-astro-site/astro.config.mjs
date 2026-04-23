@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://example.com'
+  site: 'https://nt2-site.vercel.app' // ⚠️ Vervangen door definitief domein zodra aangekocht
 });
