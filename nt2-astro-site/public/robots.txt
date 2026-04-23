@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-# Geen indexering van formulierpagina's en redirects
-Disallow: /offerte-aanvragen
+# Geen indexering van redirect-pagina's
 Disallow: /nt2-cursus-friesland
 Disallow: /nt2-cursus-leeuwarden
 Disallow: /nt2-cursus-op-locatie
