@@ -688,6 +688,10 @@ textarea { min-height: 140px; resize: vertical; }
   .doelgroepen-h2      { display: none; }
   .doelgroepen-eyebrow { font-size: 1.15rem; margin-bottom: 1.25rem; }
 
+  /* Ruimte tussen doelgroepen en over-kristina verkleinen (knop verwijderd) */
+  .doelgroepen-section { padding-bottom: 1.5rem; }
+  .about-kristina-section { padding-top: 1.5rem; }
+
   /* Minder zijpadding in hero zodat H1 meer ruimte krijgt (alleen de hero-container) */
   .hero-new .container {
     width: calc(100% - 1rem);
