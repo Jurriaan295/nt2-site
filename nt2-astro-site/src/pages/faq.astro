@@ -28,13 +28,46 @@ const faqSchema = {
     <div class="container">
       <p class="eyebrow">FAQ</p>
       <h1>Veelgestelde vragen over NT2 cursussen op locatie</h1>
-      <div class="grid" style="margin-top: 1.5rem;">
-        {faqs.map(([q, a]) => (
+      <p class="lead" style="margin-bottom: 2rem;">Antwoorden op de meest gestelde vragen over Nederlandse les op locatie, kosten, niveaus en werkwijze.</p>
+
+      <h2 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Kosten en opstart</h2>
+      <div class="grid" style="margin-bottom: 2rem;">
+        {faqs.slice(0, 2).map(([q, a]) => (
           <article class="surface faq-item">
             <h3>{q}</h3>
             <p>{a}</p>
           </article>
         ))}
+      </div>
+
+      <h2 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Werkwijze en lessen</h2>
+      <div class="grid" style="margin-bottom: 2rem;">
+        {faqs.slice(2, 6).map(([q, a]) => (
+          <article class="surface faq-item">
+            <h3>{q}</h3>
+            <p>{a}</p>
+          </article>
+        ))}
+      </div>
+
+      <h2 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Deelnemers en planning</h2>
+      <div class="grid" style="margin-bottom: 2rem;">
+        {faqs.slice(6).map(([q, a]) => (
+          <article class="surface faq-item">
+            <h3>{q}</h3>
+            <p>{a}</p>
+          </article>
+        ))}
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line);">
+        <p class="muted" style="margin-bottom: 0.5rem;">Meer informatie:</p>
+        <p style="margin: 0;">
+          <a href="/nt2-voor-bedrijven">NT2 les voor bedrijven</a> &nbsp;·&nbsp;
+          <a href="/nt2-voor-particulieren">NT2 les voor particulieren</a> &nbsp;·&nbsp;
+          <a href="/nederlandse-les-friesland">Nederlandse les in Friesland</a> &nbsp;·&nbsp;
+          <a href="/offerte-aanvragen">Offerte aanvragen</a>
+        </p>
       </div>
     </div>
   </section>

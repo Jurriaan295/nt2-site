@@ -44,28 +44,40 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <slot name="head" />
 
     <!-- Schema.org: LocalBusiness + EducationalOrganization -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': ['EducationalOrganization', 'LocalBusiness'],
-      name: 'TaalPartner – Kristina Tjalsma',
-      description: 'Praktische NT2 cursussen op locatie voor bedrijven en particulieren in Friesland en heel Nederland.',
-      url: 'https://nt2-site.vercel.app',
-      logo: 'https://nt2-site.vercel.app/images/logo2.png',
-      image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
-      telephone: '',
-      email: 'englishdutchtutor@gmail.com',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Friesland',
-        addressCountry: 'NL'
-      },
-      areaServed: [
-        { '@type': 'State', name: 'Friesland' },
-        { '@type': 'Country', name: 'Nederland' }
-      ],
-      knowsAbout: ['NT2', 'Nederlandse les', 'in-company taaltraining', 'Nederlands leren', 'taaltraining op locatie'],
-      sameAs: ['https://www.instagram.com/englishdutchtutor']
-    })}></script>
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        '@context': 'https://schema.org',
+        '@type': ['EducationalOrganization', 'LocalBusiness'],
+        '@id': 'https://nt2-site.vercel.app/#organization',
+        name: 'TaalPartner – Kristina Tjalsma',
+        description: 'Praktische NT2 cursussen op locatie voor bedrijven en particulieren in Friesland en heel Nederland.',
+        url: 'https://nt2-site.vercel.app',
+        logo: 'https://nt2-site.vercel.app/images/logo2.png',
+        image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
+        email: 'englishdutchtutor@gmail.com',
+        priceRange: '€€',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Leeuwarden',
+          addressRegion: 'Friesland',
+          addressCountry: 'NL'
+        },
+        areaServed: [
+          { '@type': 'State', name: 'Friesland' },
+          { '@type': 'Country', name: 'Nederland' }
+        ],
+        knowsAbout: ['NT2', 'Nederlandse les', 'in-company taaltraining', 'Nederlands leren', 'taaltraining op locatie', 'NT2 cursus', 'expat begeleiding'],
+        sameAs: ['https://www.instagram.com/englishdutchtutor'],
+        founder: {
+          '@type': 'Person',
+          name: 'Kristina Tjalsma',
+          jobTitle: 'NT2-docent',
+          email: 'englishdutchtutor@gmail.com',
+          image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
+          sameAs: ['https://www.instagram.com/englishdutchtutor']
+        }
+      }
+    ])}></script>
   </head>
   <body>
     <Header />
