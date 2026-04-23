@@ -6,4 +6,4 @@ Disallow: /nt2-cursus-friesland
 Disallow: /nt2-cursus-leeuwarden
 Disallow: /nt2-cursus-op-locatie
 
-Sitemap: https://nt2-site.vercel.app/sitemap.xml
+Sitemap: https://taaldiewerkt.nl/sitemap.xml

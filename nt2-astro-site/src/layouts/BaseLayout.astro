@@ -29,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://nt2-site.vercel.app/images/kristina.jpeg" />
+    <meta property="og:image" content="https://taaldiewerkt.nl/images/kristina.jpeg" />
     <meta property="og:image:width" content="540" />
     <meta property="og:image:height" content="620" />
     <meta property="og:site_name" content="TaalPartner – Nederlandse les op locatie" />
@@ -39,21 +39,47 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://nt2-site.vercel.app/images/kristina.jpeg" />
+    <meta name="twitter:image" content="https://taaldiewerkt.nl/images/kristina.jpeg" />
 
     <slot name="head" />
+
+    <!-- Google Search Console verificatie -->
+    <!-- ⚠️ Vervang VERVANG_MET_GSC_CODE door jouw verificatiecode uit Google Search Console -->
+    <meta name="google-site-verification" content="VERVANG_MET_GSC_CODE" />
+
+    <!-- Google Analytics 4 -->
+    <!-- ⚠️ Vervang G-86KG3LZ3J9 door jouw Measurement ID uit Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-86KG3LZ3J9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-86KG3LZ3J9', {
+        anonymize_ip: true
+      });
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <!-- ⚠️ Vervang CLARITY_PROJECT_ID door jouw Project ID uit Microsoft Clarity -->
+    <script is:inline>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
 
     <!-- Schema.org: LocalBusiness + EducationalOrganization -->
     <script type="application/ld+json" set:html={JSON.stringify([
       {
         '@context': 'https://schema.org',
         '@type': ['EducationalOrganization', 'LocalBusiness'],
-        '@id': 'https://nt2-site.vercel.app/#organization',
+        '@id': 'https://taaldiewerkt.nl/#organization',
         name: 'TaalPartner – Kristina Tjalsma',
         description: 'Nederlandse les op locatie voor bedrijven en particulieren in Friesland en heel Nederland.',
-        url: 'https://nt2-site.vercel.app',
-        logo: 'https://nt2-site.vercel.app/images/logo2.png',
-        image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
+        url: 'https://taaldiewerkt.nl',
+        logo: 'https://taaldiewerkt.nl/images/logo2.png',
+        image: 'https://taaldiewerkt.nl/images/kristina.jpeg',
         email: 'englishdutchtutor@gmail.com',
         priceRange: '€€',
         address: {
@@ -73,7 +99,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           name: 'Kristina Tjalsma',
           jobTitle: 'NT2-docent',
           email: 'englishdutchtutor@gmail.com',
-          image: 'https://nt2-site.vercel.app/images/kristina.jpeg',
+          image: 'https://taaldiewerkt.nl/images/kristina.jpeg',
           sameAs: ['https://www.instagram.com/englishdutchtutor']
         }
       }
@@ -85,5 +111,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <Footer />
+
+    <!-- CTA klik-tracking voor Google Analytics -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a.btn, button.btn').forEach(function (el) {
+          el.addEventListener('click', function () {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'klik_cta', {
+                event_category: 'CTA',
+                event_label: el.textContent.trim().substring(0, 60),
+                event_destination: el.getAttribute('href') || ''
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
