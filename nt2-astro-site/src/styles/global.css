@@ -842,7 +842,7 @@ textarea { min-height: 140px; resize: vertical; }
     background-color: #f7f8fa;
     background-image: url('/images/favicon.jpeg');
     background-position: center;
-    background-size: auto 320px;
+    background-size: auto 420px;
     background-repeat: no-repeat;
     filter: opacity(0.18);
     z-index: 0;
@@ -896,9 +896,9 @@ textarea { min-height: 140px; resize: vertical; }
   }
 
   .review-quote {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #7c3aed;
+    color: #3b0764;
     font-style: normal;
     line-height: 1;
   }
