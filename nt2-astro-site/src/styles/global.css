@@ -839,27 +839,18 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background-color: #7c3aed;
+    background-color: #fff;
     background-image: url('/images/favicon.jpeg');
     background-position: center;
     background-size: auto 280px;
     background-repeat: no-repeat;
-    filter: blur(1px) brightness(0.6);
+    filter: none;
     z-index: 0;
   }
 
-  /* Overlay: zachte donkere laag voor leesbaarheid, zonder harde randen */
+  /* Overlay: uitgeschakeld bij witte achtergrond */
   .review-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent              0%,
-      rgba(80, 20, 160, 0.5)  15%,
-      rgba(80, 20, 160, 0.5)  85%,
-      transparent              100%
-    );
-    z-index: 1;
+    display: none;
   }
 
   /*
@@ -895,17 +886,42 @@ textarea { min-height: 140px; resize: vertical; }
   }
 
   .review-text {
-    color: #fff;
+    color: #3b0764;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.7;
     font-style: italic;
     margin: 0 0 0.75rem;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    position: relative;
+  }
+
+  .review-text::before {
+    content: '\201C';
+    font-size: 5rem;
+    line-height: 0;
+    color: #7c3aed;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.4;
+  }
+
+  .review-text::after {
+    content: '\201D';
+    font-size: 5rem;
+    line-height: 0;
+    color: #7c3aed;
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    margin-top: 0.75rem;
+    opacity: 0.4;
   }
 
   .review-name {
-    color: rgba(255, 255, 255, 0.85);
+    color: #7c3aed;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.05em;
