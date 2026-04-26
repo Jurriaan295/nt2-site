@@ -893,20 +893,28 @@ textarea { min-height: 140px; resize: vertical; }
     font-style: italic;
     margin: 0 0 0.75rem;
     text-shadow: none;
+    position: relative;
+    padding: 0.5rem 1.8rem;
   }
 
-  .review-quote {
-    font-size: 2.2rem;
+  .review-text::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.3rem;
+    left: 0;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #3b0764;
     font-style: normal;
     line-height: 1;
   }
 
-  .review-quote-close {
-    display: block;
-    margin-top: 0.6rem;
-    font-size: 2.2rem;
+  .review-text::after {
+    content: '\201D';
+    position: absolute;
+    bottom: -0.3rem;
+    right: 0;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #3b0764;
     font-style: normal;
