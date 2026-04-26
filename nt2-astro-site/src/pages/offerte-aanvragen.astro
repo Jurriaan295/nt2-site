@@ -23,16 +23,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p style="font-weight:700; font-size:1.1rem; margin-bottom:0;">Bedankt! Je aanvraag is verzonden.</p>
         </div>
 
+        <!-- Type kiezer -->
+        <div class="offerte-type-kiezer" style="display:flex; gap:0.5rem; margin-bottom:1.25rem;">
+          <button type="button" id="btn-particulier" class="btn btn-primary offerte-type-btn offerte-type-active" onclick="setType('particulier')">Particulier</button>
+          <button type="button" id="btn-zakelijk" class="btn offerte-type-btn" onclick="setType('zakelijk')">Zakelijk</button>
+        </div>
+
         <form id="offerte-form" method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
 
           <input type="hidden" name="_subject" value="Nieuwe offerte aanvraag" />
+          <input type="hidden" name="type-klant" id="type-klant-hidden" value="Particulier" />
 
           <label>Naam
             <input name="naam" required />
-          </label>
-
-          <label>Organisatie
-            <input name="organisatie" />
           </label>
 
           <label>E-mail
@@ -43,21 +46,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <input name="telefoon" />
           </label>
 
-          <label>Locatie
-            <input name="locatie" required />
-          </label>
+          <div class="zakelijk-velden" style="display:none;">
+            <label>Organisatie
+              <input name="organisatie" />
+            </label>
 
-          <label>Aantal deelnemers
-            <input name="deelnemers" required />
-          </label>
+            <label>Locatie
+              <input name="locatie" />
+            </label>
 
-          <label>Type aanvraag
-            <select name="type-aanvraag">
-              <option>Nederlandse les op locatie</option>
-              <option>Individuele les</option>
-              <option>Anders</option>
-            </select>
-          </label>
+            <label>Aantal deelnemers
+              <input name="deelnemers" />
+            </label>
+
+            <label>Type aanvraag
+              <select name="type-aanvraag">
+                <option>Nederlandse les op locatie</option>
+                <option>Individuele les</option>
+                <option>Anders</option>
+              </select>
+            </label>
+          </div>
 
           <label>Bericht
             <textarea name="bericht"></textarea>
@@ -72,6 +81,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script>
+    function setType(type: string) {
+      const zakelijkVelden = document.querySelector('.zakelijk-velden') as HTMLElement;
+      const btnParticulier = document.getElementById('btn-particulier');
+      const btnZakelijk = document.getElementById('btn-zakelijk');
+      const hiddenType = document.getElementById('type-klant-hidden') as HTMLInputElement;
+
+      if (type === 'zakelijk') {
+        zakelijkVelden.style.display = 'block';
+        btnZakelijk?.classList.add('btn-primary', 'offerte-type-active');
+        btnZakelijk?.classList.remove('btn-outline');
+        btnParticulier?.classList.remove('btn-primary', 'offerte-type-active');
+        btnParticulier?.classList.add('btn-outline');
+        hiddenType.value = 'Zakelijk';
+      } else {
+        zakelijkVelden.style.display = 'none';
+        btnParticulier?.classList.add('btn-primary', 'offerte-type-active');
+        btnParticulier?.classList.remove('btn-outline');
+        btnZakelijk?.classList.remove('btn-primary', 'offerte-type-active');
+        btnZakelijk?.classList.add('btn-outline');
+        hiddenType.value = 'Particulier';
+      }
+    }
+
+    // Maak setType globaal beschikbaar
+    (window as any).setType = setType;
+
     const form = document.getElementById('offerte-form') as HTMLFormElement;
     const success = document.getElementById('offerte-success');
     const card = document.getElementById('offerte-card');
