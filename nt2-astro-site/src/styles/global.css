@@ -839,12 +839,12 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background-color: #fff;
+    background-color: #f7f8fa;
     background-image: url('/images/favicon.jpeg');
     background-position: center;
-    background-size: auto 280px;
+    background-size: auto 320px;
     background-repeat: no-repeat;
-    filter: none;
+    filter: opacity(0.18);
     z-index: 0;
   }
 
@@ -893,31 +893,14 @@ textarea { min-height: 140px; resize: vertical; }
     font-style: italic;
     margin: 0 0 0.75rem;
     text-shadow: none;
-    position: relative;
   }
 
-  .review-text::before {
-    content: '\201C';
-    font-size: 5rem;
-    line-height: 0;
+  .review-quote {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #7c3aed;
     font-style: normal;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 0.5rem;
-    opacity: 0.4;
-  }
-
-  .review-text::after {
-    content: '\201D';
-    font-size: 5rem;
-    line-height: 0;
-    color: #7c3aed;
-    font-style: normal;
-    font-weight: 700;
-    display: block;
-    margin-top: 0.75rem;
-    opacity: 0.4;
+    line-height: 1;
   }
 
   .review-name {
