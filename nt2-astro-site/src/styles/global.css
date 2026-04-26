@@ -903,6 +903,16 @@ textarea { min-height: 140px; resize: vertical; }
     line-height: 1;
   }
 
+  .review-quote-close {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #3b0764;
+    font-style: normal;
+    line-height: 1;
+  }
+
   .review-name {
     color: #3b0764;
     font-size: 0.95rem;
