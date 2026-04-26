@@ -8,13 +8,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div>
         <p class="eyebrow">Offerte aanvragen</p>
-        <h1>Vraag een offerte aan voor Nederlandse les op locatie</h1>
-        <p class="lead">
-          Ik maak een voorstel op maat op basis van locatie, aantal deelnemers, niveau en leerdoelen.
-        </p>
-        <p>
-          Binnen 24 uur ontvang je een reactie.
-        </p>
+        <h1 id="offerte-titel">Nederlandse les online – voor particulieren</h1>
+        <p class="lead" id="offerte-lead">Wil je Nederlands leren op jouw eigen tempo en niveau? Ik geef persoonlijke lessen online — helemaal afgestemd op jouw situatie en leerdoelen. Vul het formulier in en ik neem binnen 24 uur contact met je op.</p>
       </div>
 
       <div class="surface card" id="offerte-card">
@@ -86,6 +81,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const btnParticulier = document.getElementById('btn-particulier');
       const btnZakelijk = document.getElementById('btn-zakelijk');
       const hiddenType = document.getElementById('type-klant-hidden') as HTMLInputElement;
+      const titel = document.getElementById('offerte-titel');
+      const lead = document.getElementById('offerte-lead');
 
       if (type === 'zakelijk') {
         zakelijkVelden.style.display = 'block';
@@ -94,6 +91,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         btnParticulier?.classList.remove('btn-primary', 'offerte-type-active');
         btnParticulier?.classList.add('btn-outline');
         hiddenType.value = 'Zakelijk';
+        if (titel) titel.textContent = 'Nederlandse les op locatie – voor bedrijven';
+        if (lead) lead.textContent = 'Op zoek naar Nederlandse les op de werkvloer? Ik kom naar jouw bedrijf en geef praktische lessen die direct aansluiten op de dagelijkse werksituatie van je medewerkers. Vul het formulier in en ik neem binnen 24 uur contact met je op.';
       } else {
         zakelijkVelden.style.display = 'none';
         btnParticulier?.classList.add('btn-primary', 'offerte-type-active');
@@ -101,6 +100,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         btnZakelijk?.classList.remove('btn-primary', 'offerte-type-active');
         btnZakelijk?.classList.add('btn-outline');
         hiddenType.value = 'Particulier';
+        if (titel) titel.textContent = 'Nederlandse les online – voor particulieren';
+        if (lead) lead.textContent = 'Wil je Nederlands leren op jouw eigen tempo en niveau? Ik geef persoonlijke lessen online — helemaal afgestemd op jouw situatie en leerdoelen. Vul het formulier in en ik neem binnen 24 uur contact met je op.';
       }
     }
 
