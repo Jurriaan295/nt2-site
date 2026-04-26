@@ -823,8 +823,8 @@ textarea { min-height: 140px; resize: vertical; }
     width: 100vw;        /* volledige schermbreedte */
     margin-left: -1rem;  /* compenseert container-marge links */
     overflow: hidden;
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     height: 360px;       /* zelfde hoogte als .review-slider */
   }
 
