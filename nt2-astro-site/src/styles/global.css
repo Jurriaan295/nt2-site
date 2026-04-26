@@ -902,8 +902,9 @@ textarea { min-height: 140px; resize: vertical; }
     position: absolute;
     top: -0.3rem;
     left: 0;
-    font-size: 2.4rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', serif;
     color: #3b0764;
     font-style: normal;
     line-height: 1;
@@ -914,8 +915,9 @@ textarea { min-height: 140px; resize: vertical; }
     position: absolute;
     bottom: -0.3rem;
     right: 0;
-    font-size: 2.4rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', serif;
     color: #3b0764;
     font-style: normal;
     line-height: 1;
