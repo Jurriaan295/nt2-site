@@ -842,7 +842,7 @@ textarea { min-height: 140px; resize: vertical; }
     background-color: #f7f8fa;
     background-image: url('/images/favicon.jpeg');
     background-position: center;
-    background-size: auto 420px;
+    background-size: auto 300px;
     background-repeat: no-repeat;
     filter: opacity(0.18);
     z-index: 0;
