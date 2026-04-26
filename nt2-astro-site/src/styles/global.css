@@ -839,26 +839,25 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background-color: rgb(18, 6, 40);  /* vult lege ruimte boven/onder de afbeelding */
+    background-color: rgb(90, 40, 140);  /* lichter paars */
     background-image: url('/images/reviews-background-books.png');
     background-position: center;
     background-size: auto 310px;
     background-repeat: no-repeat;
-    filter: blur(0.5px) brightness(1.5);
+    filter: blur(0.5px) brightness(1.8);
     z-index: 0;
   }
 
-  /* Overlay: donkere laag in het midden voor leesbaarheid tekst,
-     vervaagt naar de websiteachtergrondkleur (#f7f8fa) aan boven- en onderkant */
+  /* Overlay: zachte donkere laag voor leesbaarheid, zonder harde randen */
   .review-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to bottom,
-      #f7f8fa              0,
-      rgba(18,6,40,0.55)   6px,
-      rgba(18,6,40,0.55)   calc(100% - 6px),
-      #f7f8fa              100%
+      transparent              0%,
+      rgba(60, 20, 100, 0.45)  15%,
+      rgba(60, 20, 100, 0.45)  85%,
+      transparent              100%
     );
     z-index: 1;
   }
