@@ -842,7 +842,7 @@ textarea { min-height: 140px; resize: vertical; }
     background-color: #f7f8fa;
     background-image: url('/images/favicon.jpeg');
     background-position: center;
-    background-size: auto 300px;
+    background-size: auto 350px;
     background-repeat: no-repeat;
     filter: opacity(0.18);
     z-index: 0;
@@ -887,7 +887,7 @@ textarea { min-height: 140px; resize: vertical; }
 
   .review-text {
     color: #3b0764;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.7;
     font-style: italic;
@@ -904,7 +904,7 @@ textarea { min-height: 140px; resize: vertical; }
   }
 
   .review-name {
-    color: #7c3aed;
+    color: #3b0764;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.05em;
