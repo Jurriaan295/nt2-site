@@ -839,12 +839,12 @@ textarea { min-height: 140px; resize: vertical; }
   .review-bg {
     position: absolute;
     inset: 0;
-    background-color: #073d4a;
-    background-image: url('/images/reviews-background-books.png');
+    background-color: #7c3aed;
+    background-image: url('/images/favicon.jpeg');
     background-position: center;
-    background-size: auto 310px;
+    background-size: auto 280px;
     background-repeat: no-repeat;
-    filter: blur(1px) brightness(1.6);
+    filter: blur(1px) brightness(0.6);
     z-index: 0;
   }
 
@@ -855,8 +855,8 @@ textarea { min-height: 140px; resize: vertical; }
     background: linear-gradient(
       to bottom,
       transparent              0%,
-      rgba(7, 61, 74, 0.55)  15%,
-      rgba(7, 61, 74, 0.55)  85%,
+      rgba(80, 20, 160, 0.5)  15%,
+      rgba(80, 20, 160, 0.5)  85%,
       transparent              100%
     );
     z-index: 1;
