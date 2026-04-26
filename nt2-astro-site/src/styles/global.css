@@ -934,12 +934,12 @@ textarea { min-height: 140px; resize: vertical; }
   /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:hidden op .review-slider) */
   .review-arrow {
     position: absolute;
-    top: 50%;
+    top: 44%;
     transform: translateY(-50%);
     z-index: 5;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
+    background: rgba(59, 7, 100, 0.1);
+    border: 1px solid rgba(59, 7, 100, 0.2);
+    color: #3b0764;
     font-size: 1.6rem;
     line-height: 1;
     width: 34px;
@@ -952,9 +952,9 @@ textarea { min-height: 140px; resize: vertical; }
     padding: 0;
     transition: background 0.2s;
   }
-  .review-arrow:hover { background: rgba(255, 255, 255, 0.25); }
-  .review-prev { left: 8px; }
-  .review-next { right: 8px; }
+  .review-arrow:hover { background: rgba(59, 7, 100, 0.2); }
+  .review-prev { left: 22px; }
+  .review-next { right: 22px; }
 
   /* Dots */
   .review-dots {
