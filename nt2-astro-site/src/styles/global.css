@@ -937,9 +937,9 @@ textarea { min-height: 140px; resize: vertical; }
     top: 44%;
     transform: translateY(-50%);
     z-index: 5;
-    background: rgba(59, 7, 100, 0.1);
-    border: 1px solid rgba(59, 7, 100, 0.2);
-    color: #3b0764;
+    background: transparent;
+    border: 1px solid rgba(59, 7, 100, 0.12);
+    color: rgba(59, 7, 100, 0.3);
     font-size: 1.6rem;
     line-height: 1;
     width: 34px;
