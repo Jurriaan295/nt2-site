@@ -438,6 +438,26 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .cta-strip-strong .btn-primary:hover { background: #e6f4f6; }
 
+/* ── Meer informatie links ── */
+.meer-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.meer-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.meer-info-list li::before {
+  content: '●';
+  color: var(--accent);
+  font-size: 0.45rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
 /* ── Scroll naar boven knop ── */
 #scroll-top-btn {
   position: fixed;
