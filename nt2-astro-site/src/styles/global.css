@@ -438,6 +438,39 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .cta-strip-strong .btn-primary:hover { background: #e6f4f6; }
 
+/* ── Scroll naar boven knop ── */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 100;
+}
+#scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#scroll-top-btn:hover {
+  background: var(--accent-dark);
+}
+
 /* ── Responsief ── */
 @media (max-width: 900px) {
   .hero-new-grid { grid-template-columns: 1fr; }
