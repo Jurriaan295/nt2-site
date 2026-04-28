@@ -14,7 +14,22 @@
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  overflow-x: clip; /* voorkomt dat ink-overflow (shadows) horizontale scroll veroorzaakt */
+  overflow-x: clip;
+  scrollbar-color: #9333ea #f0e8ff;
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar {
+  width: 6px;
+}
+html::-webkit-scrollbar-track {
+  background: #f0e8ff;
+}
+html::-webkit-scrollbar-thumb {
+  background: #9333ea;
+  border-radius: 3px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
 }
 body {
   margin: 0;
@@ -479,24 +494,6 @@ textarea { min-height: 140px; resize: vertical; }
 }
 
 
-/* ── Native scrollbalk paars ── */
-html {
-  scrollbar-color: #9333ea #f0e8ff;
-  scrollbar-width: thin;
-}
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f0e8ff;
-}
-::-webkit-scrollbar-thumb {
-  background: #9333ea;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
-}
 
 /* ── Scroll naar boven knop ── */
 #scroll-top-btn {
