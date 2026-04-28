@@ -478,6 +478,24 @@ textarea { min-height: 140px; resize: vertical; }
   margin-top: 1px;
 }
 
+/* ── Scroll voortgangsbalk ── */
+#scroll-progress-track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100vh;
+  background: rgba(124, 58, 237, 0.12);
+  z-index: 200;
+}
+#scroll-progress-bar {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, #7c3aed, #a855f7);
+  border-radius: 0 0 4px 4px;
+  transition: height 0.1s linear;
+}
+
 /* ── Scroll naar boven knop ── */
 #scroll-top-btn {
   position: fixed;

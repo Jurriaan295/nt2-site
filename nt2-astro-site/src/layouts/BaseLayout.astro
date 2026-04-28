@@ -108,21 +108,35 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </main>
     <Footer />
 
+    <!-- Scroll voortgangsbalk -->
+    <div id="scroll-progress-track">
+      <div id="scroll-progress-bar"></div>
+    </div>
+
     <!-- Scroll-naar-boven knop -->
     <button id="scroll-top-btn" aria-label="Naar boven scrollen" title="Naar boven">
       &#8679;
     </button>
 
-    <!-- Scroll-naar-boven logica -->
+    <!-- Scroll logica -->
     <script is:inline>
       var scrollBtn = document.getElementById('scroll-top-btn');
+      var progressBar = document.getElementById('scroll-progress-bar');
+
       window.addEventListener('scroll', function () {
+        // Scroll-naar-boven knop
         if (window.scrollY > 300) {
           scrollBtn.classList.add('visible');
         } else {
           scrollBtn.classList.remove('visible');
         }
+        // Voortgangsbalk
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.height = progress + '%';
       });
+
       scrollBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
