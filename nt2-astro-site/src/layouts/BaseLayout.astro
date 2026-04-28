@@ -109,9 +109,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <Footer />
 
     <!-- Scroll voortgangsbalk -->
-    <div id="scroll-progress-track">
-      <div id="scroll-progress-bar"></div>
-    </div>
+    <div id="scroll-progress-bar"></div>
 
     <!-- Scroll-naar-boven knop -->
     <button id="scroll-top-btn" aria-label="Naar boven scrollen" title="Naar boven">
@@ -134,7 +132,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         var scrollTop = window.scrollY;
         var docHeight = document.documentElement.scrollHeight - window.innerHeight;
         var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.height = progress + '%';
+        if (progress <= 0) {
+          progressBar.style.height = '0';
+          progressBar.style.opacity = '0';
+        } else {
+          progressBar.style.height = progress + 'vh';
+          progressBar.style.opacity = '1';
+        }
       });
 
       scrollBtn.addEventListener('click', function () {
