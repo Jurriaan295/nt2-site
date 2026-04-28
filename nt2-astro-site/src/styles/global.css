@@ -15,11 +15,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip; /* voorkomt dat ink-overflow (shadows) horizontale scroll veroorzaakt */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-html::-webkit-scrollbar {
-  display: none; /* Chrome / Safari / Android */
 }
 body {
   margin: 0;
@@ -483,20 +478,24 @@ textarea { min-height: 140px; resize: vertical; }
   margin-top: 1px;
 }
 
-/* ── Scroll voortgangsbalk ── */
-#scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 4px;
-  height: 0;
-  opacity: 0;
-  background: linear-gradient(to bottom, #7c3aed, #a855f7);
-  z-index: 200;
-  transition: height 0.1s linear, opacity 0.1s linear;
-  border: none;
-  outline: none;
-  pointer-events: none;
+
+/* ── Native scrollbalk paars ── */
+html {
+  scrollbar-color: #9333ea #f0e8ff;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0e8ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #9333ea;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
 }
 
 /* ── Scroll naar boven knop ── */
@@ -504,12 +503,12 @@ textarea { min-height: 140px; resize: vertical; }
   position: fixed;
   bottom: 1.5rem;
   right: 0.6rem;
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #9333ea;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1;
   border: none;
   cursor: pointer;
@@ -529,7 +528,7 @@ textarea { min-height: 140px; resize: vertical; }
   transform: translateY(0);
 }
 #scroll-top-btn:hover {
-  background: var(--accent-dark);
+  background: #7c3aed;
 }
 
 /* ── Responsief ── */
