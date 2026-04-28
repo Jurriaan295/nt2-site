@@ -15,6 +15,11 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip; /* voorkomt dat ink-overflow (shadows) horizontale scroll veroorzaakt */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Android */
 }
 body {
   margin: 0;
