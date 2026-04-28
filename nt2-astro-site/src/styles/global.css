@@ -485,7 +485,7 @@ textarea { min-height: 140px; resize: vertical; }
   right: 0;
   width: 4px;
   height: 100vh;
-  background: rgba(124, 58, 237, 0.12);
+  background: transparent;
   z-index: 200;
 }
 #scroll-progress-bar {
@@ -640,6 +640,7 @@ textarea { min-height: 140px; resize: vertical; }
     padding: 6px;
     display: flex;
     align-items: center;
+    margin-bottom: 4px;
   }
 
   /* Uitklapmenu */
