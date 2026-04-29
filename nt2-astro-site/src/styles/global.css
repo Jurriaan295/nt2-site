@@ -547,11 +547,11 @@ textarea { min-height: 140px; resize: vertical; }
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #fce7f3;
-  border: 2px solid #9333ea;
-  color: #7c3aed;
+  background: #db2777;
+  border: none;
+  color: #fff;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
