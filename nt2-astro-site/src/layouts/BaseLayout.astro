@@ -43,26 +43,28 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
     <slot name="head" />
 
-    <!-- Google Analytics 4 -->
-    <!-- ⚠️ Vervang G-86KG3LZ3J9 door jouw Measurement ID uit Google Analytics -->
+    <!-- Google Analytics 4 – alleen op productiedomain -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-86KG3LZ3J9"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-86KG3LZ3J9', {
-        anonymize_ip: true
-      });
+      if (window.location.hostname === 'taaldiewerkt.nl') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-86KG3LZ3J9', {
+          anonymize_ip: true
+        });
+      }
     </script>
 
-    <!-- Microsoft Clarity -->
-    <!-- ⚠️ Vervang wgdm1kdc8s door jouw Project ID uit Microsoft Clarity -->
+    <!-- Microsoft Clarity – alleen op productiedomain -->
     <script is:inline>
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wgdm1kdc8s");
+      if (window.location.hostname === 'taaldiewerkt.nl') {
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wgdm1kdc8s");
+      }
     </script>
 
     <!-- Schema.org: LocalBusiness + EducationalOrganization -->
