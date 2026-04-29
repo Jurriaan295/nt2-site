@@ -495,6 +495,120 @@ textarea { min-height: 140px; resize: vertical; }
 
 
 
+/* ── Bedrijven pagina ── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.bedrijven-icon {
+  width: 40px;
+  height: 40px;
+  background: #f3e8ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+}
+.bedrijven-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+.sector-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sector-tag {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #9333ea;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+.praktisch-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.praktisch-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+}
+.praktisch-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9333ea;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .praktisch-list { grid-template-columns: 1fr; }
+}
+.bedrijven-quote {
+  border-left: 3px solid #9333ea;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 0;
+}
+.bedrijven-quote p {
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+.bedrijven-quote cite {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: normal;
+}
+.bedrijven-cta {
+  background: #f3e8ff;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  text-align: center;
+}
+.bedrijven-cta p {
+  color: #6b21a8;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
 /* ── Scroll naar boven knop ── */
 #scroll-top-btn {
   position: fixed;
