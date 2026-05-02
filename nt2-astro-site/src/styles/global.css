@@ -675,8 +675,8 @@ textarea { min-height: 140px; resize: vertical; }
 .contact-fab.open .fab-whatsapp  { transition-delay: 0.05s; }
 .contact-fab.open .fab-email     { transition-delay: 0.1s; }
 .fab-email     { background: #ea4335; }
-.fab-whatsapp  { background: url('/images/logo4.jpeg') center / 115% no-repeat; }
-.fab-instagram { background: url('/images/logo3.jpeg') center / 115% no-repeat; }
+.fab-whatsapp  { background: #25D366 url('/images/logo4_fab.png') center / cover no-repeat; }
+.fab-instagram { background: url('/images/logo3_fab.png') center / cover no-repeat; }
 .contact-fab-item:hover { opacity: 0.9; text-decoration: none; transform: scale(1.08); }
 
 
