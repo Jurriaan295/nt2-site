@@ -615,7 +615,7 @@ textarea { min-height: 140px; resize: vertical; }
 /* ── Uitklapbare contactknop ── */
 .contact-fab {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 5rem;
   right: 1rem;
   display: flex;
   flex-direction: column;
@@ -672,8 +672,8 @@ textarea { min-height: 140px; resize: vertical; }
 .contact-fab.open .fab-whatsapp  { transition-delay: 0.05s; }
 .contact-fab.open .fab-email     { transition-delay: 0.1s; }
 .fab-email     { background: #ea4335; }
-.fab-whatsapp  { background: #25d366; }
-.fab-instagram { background: #c13584; }
+.fab-whatsapp  { background: transparent; }
+.fab-instagram { background: transparent; }
 .contact-fab-item:hover { opacity: 0.9; text-decoration: none; transform: scale(1.08); }
 
 /* ── Scroll naar boven knop ── */
