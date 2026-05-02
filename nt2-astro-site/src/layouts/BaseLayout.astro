@@ -153,11 +153,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       </button>
     </div>
 
-    <!-- Scroll-naar-boven knop -->
-    <button id="scroll-top-btn" aria-label="Naar boven scrollen" title="Naar boven">
-      &#8679;
-    </button>
-
     <!-- Contact FAB logica -->
     <script is:inline>
       var fab = document.getElementById('contactFab');
@@ -170,22 +165,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       });
     </script>
 
-    <!-- Scroll logica -->
-    <script is:inline>
-      var scrollBtn = document.getElementById('scroll-top-btn');
-
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-          scrollBtn.classList.add('visible');
-        } else {
-          scrollBtn.classList.remove('visible');
-        }
-      });
-
-      scrollBtn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
 
     <!-- CTA klik-tracking voor Google Analytics -->
     <script is:inline>

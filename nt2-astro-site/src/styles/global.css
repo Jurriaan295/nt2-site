@@ -655,6 +655,8 @@ textarea { min-height: 140px; resize: vertical; }
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  padding: 0;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   opacity: 0;
   transform: translateY(10px);
@@ -662,7 +664,7 @@ textarea { min-height: 140px; resize: vertical; }
   transition: opacity 0.2s, transform 0.2s;
   flex-shrink: 0;
 }
-.contact-fab-item svg { width: 22px; height: 22px; }
+.contact-fab-item svg { width: 46px; height: 46px; border-radius: 50%; }
 .contact-fab.open .contact-fab-item {
   opacity: 1;
   transform: translateY(0);
@@ -676,38 +678,6 @@ textarea { min-height: 140px; resize: vertical; }
 .fab-instagram { background: transparent; }
 .contact-fab-item:hover { opacity: 0.9; text-decoration: none; transform: scale(1.08); }
 
-/* ── Scroll naar boven knop ── */
-#scroll-top-btn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 0.6rem;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #9333ea;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(12px);
-  transition: opacity 0.3s, transform 0.3s;
-  z-index: 100;
-}
-#scroll-top-btn.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-#scroll-top-btn:hover {
-  background: #7c3aed;
-}
 
 /* ── Responsief ── */
 @media (max-width: 900px) {
