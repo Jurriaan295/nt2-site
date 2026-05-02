@@ -612,6 +612,32 @@ textarea { min-height: 140px; resize: vertical; }
   line-height: 1.6;
 }
 
+/* ── WhatsApp knop ── */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 100;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+  text-decoration: none;
+}
+.whatsapp-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
 /* ── Scroll naar boven knop ── */
 #scroll-top-btn {
   position: fixed;
