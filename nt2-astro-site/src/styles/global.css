@@ -615,7 +615,7 @@ textarea { min-height: 140px; resize: vertical; }
 /* ── Uitklapbare contactknop ── */
 .contact-fab {
   position: fixed;
-  bottom: 5rem;
+  bottom: 1.5rem;
   right: 1rem;
   display: flex;
   flex-direction: column;
@@ -666,6 +666,7 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .contact-fab-item svg { width: 46px; height: 46px; border-radius: 50%; }
 .fab-email svg { width: 26px; height: 26px; border-radius: 0; }
+.contact-fab-item img { width: 46px; height: 46px; object-fit: cover; display: block; border-radius: 50%; }
 .contact-fab.open .contact-fab-item {
   opacity: 1;
   transform: translateY(0);
