@@ -666,7 +666,6 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .contact-fab-item svg { width: 46px; height: 46px; border-radius: 50%; }
 .fab-email svg { width: 26px; height: 26px; border-radius: 0; }
-.contact-fab-item img { width: 46px; height: 46px; object-fit: cover; display: block; border-radius: 50%; }
 .contact-fab.open .contact-fab-item {
   opacity: 1;
   transform: translateY(0);
@@ -676,8 +675,8 @@ textarea { min-height: 140px; resize: vertical; }
 .contact-fab.open .fab-whatsapp  { transition-delay: 0.05s; }
 .contact-fab.open .fab-email     { transition-delay: 0.1s; }
 .fab-email     { background: #ea4335; }
-.fab-whatsapp  { background: transparent; }
-.fab-instagram { background: transparent; }
+.fab-whatsapp  { background: url('/images/logo4.jpeg') center / 115% no-repeat; }
+.fab-instagram { background: url('/images/logo3.jpeg') center / 115% no-repeat; }
 .contact-fab-item:hover { opacity: 0.9; text-decoration: none; transform: scale(1.08); }
 
 
