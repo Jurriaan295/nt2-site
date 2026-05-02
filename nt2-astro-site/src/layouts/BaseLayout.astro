@@ -121,10 +121,32 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <div class="contact-fab" id="contactFab">
       <!-- Sub-knoppen -->
       <a href="mailto:englishdutchtutor@gmail.com" class="contact-fab-item fab-email" aria-label="Stuur een e-mail">
-        <svg viewBox="-4 -2 32 28" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
-      <a href="https://wa.me/31515796206" class="contact-fab-item fab-whatsapp" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp bericht"></a>
-      <a href="https://www.instagram.com/englishdutchtutor" class="contact-fab-item fab-instagram" target="_blank" rel="noopener" aria-label="Bekijk Instagram"></a>
+      <a href="https://wa.me/31515796206" class="contact-fab-item fab-whatsapp" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp bericht">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#25D366"/>
+          <path fill="white" d="M50 18C32.3 18 18 32.3 18 50c0 5.6 1.5 10.9 4.2 15.4L18 82l17-4.1A32 32 0 0 0 50 82c17.7 0 32-14.3 32-32S67.7 18 50 18z"/>
+          <path fill="#25D366" d="M38.5 31.7c-.6-1.4-1.2-1.4-1.8-1.4l-1.5-.03c-.5 0-1.3.19-2 .98-.7.78-2.7 2.63-2.7 6.41s2.76 7.42 3.15 7.93c.38.5 5.35 8.49 13.14 11.57 6.51 2.57 7.83 2.06 9.24 1.93 1.42-.12 4.56-1.86 5.2-3.65.65-1.8.65-3.34.46-3.66-.2-.32-.7-.51-1.5-.9l-5.22-2.52c-.77-.37-1.29-.56-1.84.56-.54 1.12-2.07 2.64-2.54 3.18-.47.54-.93.6-1.72.2-.78-.38-3.28-1.2-6.23-3.84-2.3-2.05-3.86-4.58-4.31-5.35-.46-.77-.05-1.19.34-1.56.36-.36.78-.94 1.17-1.41.38-.47.5-.8.76-1.34.25-.53.12-.99-.07-1.38l-2.71-5.97z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/englishdutchtutor" class="contact-fab-item fab-instagram" target="_blank" rel="noopener" aria-label="Bekijk Instagram">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ig-fab" cx="30%" cy="107%" r="150%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="10%" stop-color="#fdf497"/>
+              <stop offset="50%" stop-color="#fd5949"/>
+              <stop offset="68%" stop-color="#d6249f"/>
+              <stop offset="100%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="50" r="50" fill="url(#ig-fab)"/>
+          <rect x="24" y="24" width="52" height="52" rx="14" ry="14" fill="none" stroke="white" stroke-width="5"/>
+          <circle cx="50" cy="50" r="13" fill="none" stroke="white" stroke-width="5"/>
+          <circle cx="67" cy="33" r="4" fill="white"/>
+        </svg>
+      </a>
       <!-- Hoofdknop -->
       <button class="contact-fab-main" id="contactFabBtn" aria-label="Contact opties">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
