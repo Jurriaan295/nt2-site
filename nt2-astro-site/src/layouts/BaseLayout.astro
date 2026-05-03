@@ -121,9 +121,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <div class="contact-fab" id="contactFab">
       <!-- Sub-knoppen -->
       <a href="mailto:englishdutchtutor@gmail.com" class="contact-fab-item fab-email" aria-label="Stuur een e-mail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#f9a8d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <polyline points="3,4 12,13 21,4"/>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Envelop body met zachte rondingen -->
+          <rect x="2.5" y="5.5" width="19" height="14" rx="2.5" stroke="#fecdd3" stroke-width="1.6"/>
+          <!-- V-lijn die iets binnen de rand begint voor een strakke aansluiting -->
+          <path d="M3 7.5 L12 14.5 L21 7.5" stroke="#fecdd3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
       </a>
       <a href="https://wa.me/31515796206" class="contact-fab-item fab-whatsapp" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp bericht"></a>
