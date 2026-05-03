@@ -620,7 +620,7 @@ textarea { min-height: 140px; resize: vertical; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 22px;
   z-index: 200;
 }
 .contact-fab-main {
@@ -649,8 +649,8 @@ textarea { min-height: 140px; resize: vertical; }
 .contact-fab.open .icon-open { display: none; }
 .contact-fab.open .icon-close { display: block; }
 .contact-fab-item {
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -664,8 +664,8 @@ textarea { min-height: 140px; resize: vertical; }
   transition: opacity 0.2s, transform 0.2s;
   flex-shrink: 0;
 }
-.contact-fab-item svg { width: 46px; height: 46px; border-radius: 50%; }
-.fab-email svg { width: 26px; height: 26px; border-radius: 0; }
+.contact-fab-item svg { width: 54px; height: 54px; border-radius: 50%; }
+.fab-email svg { width: 30px; height: 30px; border-radius: 0; }
 .contact-fab.open .contact-fab-item {
   opacity: 1;
   transform: translateY(0);
@@ -674,7 +674,7 @@ textarea { min-height: 140px; resize: vertical; }
 .contact-fab.open .fab-instagram { transition-delay: 0s; }
 .contact-fab.open .fab-whatsapp  { transition-delay: 0.05s; }
 .contact-fab.open .fab-email     { transition-delay: 0.1s; }
-.fab-email     { background: #ea4335; }
+.fab-email     { background: #7c3aed; }
 .fab-whatsapp  { background: url('/images/logo6.jpeg') center / cover no-repeat; }
 .fab-instagram { background: url('/images/logo5.jpeg') center / cover no-repeat; }
 .contact-fab-item:hover { opacity: 0.9; text-decoration: none; transform: scale(1.08); }
