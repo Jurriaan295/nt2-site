@@ -189,7 +189,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </script>
 
     <!-- Cookiebanner -->
-    <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookiemelding" tabindex="-1" hidden>
       <p>Deze website gebruikt alleen cookies voor anonieme websitestatistieken (Google Analytics en Microsoft Clarity), zodat we de site kunnen verbeteren. Lees meer in de <a href="/privacy/">privacyverklaring</a>.</p>
       <div class="cookie-banner-actions">
         <button type="button" id="cookieDecline" class="btn btn-secondary">Weigeren</button>
@@ -202,6 +202,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         var banner = document.getElementById('cookieBanner');
         var accept = document.getElementById('cookieAccept');
         var decline = document.getElementById('cookieDecline');
+        var settingsLink = document.getElementById('cookieSettingsLink');
         var consent;
         try { consent = localStorage.getItem('cookie-consent'); } catch (e) {}
         if (!consent && banner) banner.hidden = false;
@@ -214,6 +215,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         decline?.addEventListener('click', function () {
           try { localStorage.setItem('cookie-consent', 'declined'); } catch (e) {}
           if (banner) banner.hidden = true;
+        });
+        settingsLink?.addEventListener('click', function () {
+          if (banner) {
+            banner.hidden = false;
+            banner.focus();
+          }
         });
       })();
     </script>
