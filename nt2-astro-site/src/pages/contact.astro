@@ -31,6 +31,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <form id="contact-form" method="post" action="https://formspree.io/f/maqajezy" class="contact-form">
 
           <input type="hidden" name="_subject" value="Nieuwe aanvraag via website" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <label for="naam">Naam</label>
           <input id="naam" name="naam" type="text" required autocomplete="name" />
