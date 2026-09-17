@@ -1337,3 +1337,45 @@ textarea { min-height: 140px; resize: vertical; }
     flex-shrink: 0;
   }
 }
+
+/* Cookiebanner */
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 300;
+  max-width: 480px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+.cookie-banner p {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.cookie-banner p a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.cookie-banner-actions .btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+}
+@media (max-width: 640px) {
+  .cookie-banner {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    max-width: none;
+  }
+}

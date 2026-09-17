@@ -30,8 +30,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content="https://taaldiewerkt.nl/images/kristina.webp" />
-    <meta property="og:image:width" content="540" />
-    <meta property="og:image:height" content="620" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
     <meta property="og:site_name" content="TaalPartner – Nederlandse les op locatie" />
     <meta property="og:locale" content="nl_NL" />
 
@@ -43,28 +43,33 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
     <slot name="head" />
 
-    <!-- Google Analytics 4 – alleen op productiedomain -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-86KG3LZ3J9"></script>
+    <!-- Google Analytics 4 + Microsoft Clarity – alleen op productiedomain, en pas na cookietoestemming -->
     <script is:inline>
-      if (window.location.hostname === 'taaldiewerkt.nl') {
+      window.loadAnalytics = function () {
+        if (window.location.hostname !== 'taaldiewerkt.nl') return;
+        if (window.__analyticsLoaded) return;
+        window.__analyticsLoaded = true;
+
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-86KG3LZ3J9';
+        document.head.appendChild(ga);
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
         gtag('js', new Date());
-        gtag('config', 'G-86KG3LZ3J9', {
-          anonymize_ip: true
-        });
-      }
-    </script>
+        gtag('config', 'G-86KG3LZ3J9', { anonymize_ip: true });
 
-    <!-- Microsoft Clarity – alleen op productiedomain -->
-    <script is:inline>
-      if (window.location.hostname === 'taaldiewerkt.nl') {
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wgdm1kdc8s");
-      }
+      };
+
+      try {
+        if (localStorage.getItem('cookie-consent') === 'accepted') window.loadAnalytics();
+      } catch (e) {}
     </script>
 
     <!-- Schema.org: LocalBusiness + EducationalOrganization -->
@@ -181,6 +186,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           });
         });
       });
+    </script>
+
+    <!-- Cookiebanner -->
+    <div class="cookie-banner" id="cookieBanner" hidden>
+      <p>Deze website gebruikt alleen cookies voor anonieme websitestatistieken (Google Analytics en Microsoft Clarity), zodat we de site kunnen verbeteren. Lees meer in de <a href="/privacy/">privacyverklaring</a>.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" id="cookieDecline" class="btn btn-secondary">Weigeren</button>
+        <button type="button" id="cookieAccept" class="btn btn-primary">Accepteren</button>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function () {
+        var banner = document.getElementById('cookieBanner');
+        var accept = document.getElementById('cookieAccept');
+        var decline = document.getElementById('cookieDecline');
+        var consent;
+        try { consent = localStorage.getItem('cookie-consent'); } catch (e) {}
+        if (!consent && banner) banner.hidden = false;
+
+        accept?.addEventListener('click', function () {
+          try { localStorage.setItem('cookie-consent', 'accepted'); } catch (e) {}
+          if (banner) banner.hidden = true;
+          if (window.loadAnalytics) window.loadAnalytics();
+        });
+        decline?.addEventListener('click', function () {
+          try { localStorage.setItem('cookie-consent', 'declined'); } catch (e) {}
+          if (banner) banner.hidden = true;
+        });
+      })();
     </script>
   </body>
 </html>
