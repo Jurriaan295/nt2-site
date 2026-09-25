@@ -100,42 +100,6 @@ const description = 'Nederlandse les op locatie voor bedrijven en particulieren 
         <p>Ik geloof dat taal pas echt tot leven komt wanneer je die direct kunt gebruiken. Daarom geef ik les op locatie — bij bedrijven, instellingen of bij mensen thuis. Geen standaard methode, maar een aanpak die aansluit op de werkelijkheid van de deelnemer.</p>
         <p>Met jarenlange ervaring in NT2-onderwijs begeleid ik anderstaligen van absolute beginner tot gevorderden. Of het nu gaat om een medewerker die instructies op de werkvloer moet begrijpen, een expat die zich wil inburgeren in Leeuwarden, of een organisatie die investeert in de taalontwikkeling van haar team — ik denk graag mee en zorg voor resultaat.</p>
 
-        <!-- REVIEW SLIDER – alleen mobiel -->
-        <div class="review-slider-wrap">
-          <div class="review-slider" id="reviewSlider">
-            <!-- Achtergrond + overlay via CSS -->
-            <div class="review-bg" aria-hidden="true"></div>
-            <div class="review-overlay" aria-hidden="true"></div>
-
-            <!-- Track met reviews — voeg hier makkelijk nieuwe reviews toe -->
-            <div class="review-track" id="reviewTrack">
-              <div class="review-slide">
-                <p class="review-text">Ik spreek nu zelfverzekerder.<br>Kristina past de les aan —<br>dat maakt echt verschil.</p>
-                <p class="review-name">Narimene</p>
-              </div>
-              <div class="review-slide">
-                <p class="review-text">De lessen passen bij mijn werk.<br>Ik versta collega's nu beter<br>en ga gesprekken aan.</p>
-                <p class="review-name">Andrei</p>
-              </div>
-              <div class="review-slide">
-                <p class="review-text">Fijne en geduldige docent.<br>Na weken merkte ik al verschil —<br>op het werk én thuis.</p>
-                <p class="review-name">Fatima</p>
-              </div>
-            </div>
-
-            <!-- Navigatiepijlen -->
-            <button class="review-arrow review-prev" id="reviewPrev" aria-label="Vorige review">&#8249;</button>
-            <button class="review-arrow review-next" id="reviewNext" aria-label="Volgende review">&#8250;</button>
-
-            <!-- Dots -->
-            <div class="review-dots" id="reviewDots">
-              <span class="review-dot" data-index="0"></span>
-              <span class="review-dot" data-index="1"></span>
-              <span class="review-dot" data-index="2"></span>
-            </div>
-          </div>
-        </div>
-
         <ul class="check-list about-check-list" style="margin-top: 1.25rem;">
           <li>Gecertificeerd NT2-docent</li>
           <li>Actief in Friesland, Leeuwarden, Drachten, Sneek, Heerenveen en heel Nederland</li>
@@ -144,6 +108,50 @@ const description = 'Nederlandse les op locatie voor bedrijven en particulieren 
         <div class="btn-row about-btn-row" style="margin-top: 1.75rem;">
           <a class="btn btn-primary about-offerte-btn" href="/offerte-aanvragen/">Offerte aanvragen</a>
           <a class="btn btn-secondary howworks-desktop" href="/nt2-voor-bedrijven/">Meer voor bedrijven</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section-tight bg-soft reviews-section">
+    <div class="container">
+      <p class="eyebrow text-center">Ervaringen</p>
+      <h2 class="text-center reviews-h2">Wat cursisten zeggen</h2>
+      <p class="text-center reviews-rating"><span class="reviews-stars" aria-hidden="true">★★★★★</span> 5,0 op basis van 12 reviews</p>
+
+      <div class="review-slider-wrap">
+        <div class="review-slider" id="reviewSlider">
+          <!-- Achtergrond + overlay via CSS (alleen mobiel) -->
+          <div class="review-bg" aria-hidden="true"></div>
+          <div class="review-overlay" aria-hidden="true"></div>
+
+          <!-- Track met reviews — voeg hier makkelijk nieuwe reviews toe -->
+          <div class="review-track" id="reviewTrack">
+            <div class="review-slide">
+              <p class="review-text">Ik spreek nu zelfverzekerder.<br>Kristina past de les aan —<br>dat maakt echt verschil.</p>
+              <p class="review-name">Narimene</p>
+            </div>
+            <div class="review-slide">
+              <p class="review-text">De lessen passen bij mijn werk.<br>Ik versta collega's nu beter<br>en ga gesprekken aan.</p>
+              <p class="review-name">Andrei</p>
+            </div>
+            <div class="review-slide">
+              <p class="review-text">Fijne en geduldige docent.<br>Na weken merkte ik al verschil —<br>op het werk én thuis.</p>
+              <p class="review-name">Fatima</p>
+            </div>
+          </div>
+
+          <!-- Navigatiepijlen (alleen mobiel) -->
+          <button class="review-arrow review-prev" id="reviewPrev" aria-label="Vorige review">&#8249;</button>
+          <button class="review-arrow review-next" id="reviewNext" aria-label="Volgende review">&#8250;</button>
+
+          <!-- Dots (alleen mobiel) -->
+          <div class="review-dots" id="reviewDots">
+            <span class="review-dot" data-index="0"></span>
+            <span class="review-dot" data-index="1"></span>
+            <span class="review-dot" data-index="2"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -289,7 +297,9 @@ const description = 'Nederlandse les op locatie voor bedrijven en particulieren 
   const prev    = document.getElementById('reviewPrev');
   const next    = document.getElementById('reviewNext');
 
-  if (track) {
+  // Op desktop staan de reviews als statische kaarten naast elkaar (grid) —
+  // de schuif-logica is alleen nodig voor de mobiele slider.
+  if (track && window.matchMedia('(max-width: 900px)').matches) {
     const slides = track.querySelectorAll('.review-slide');
     let current  = 0;
     let timer: ReturnType<typeof setInterval>;

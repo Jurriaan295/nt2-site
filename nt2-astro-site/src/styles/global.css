@@ -244,10 +244,37 @@ textarea { min-height: 140px; resize: vertical; }
 /* Footer contactblok – alleen mobiel */
 .footer-contact-mobile { display: none; }
 
-/* Review slider – verborgen op desktop */
-.review-slider-wrap { display: none !important; }
-@media (max-width: 900px) {
-  .review-slider-wrap { display: block !important; }
+/* Reviews */
+.reviews-h2 { margin-bottom: 0.5rem; }
+.reviews-rating { color: var(--muted); margin-bottom: 2rem; font-weight: 600; }
+.reviews-stars { color: #f5a623; letter-spacing: 0.1em; }
+
+@media (min-width: 901px) {
+  .review-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .review-slide {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.75rem;
+    text-align: left;
+  }
+  .review-text {
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+  .review-name {
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin: 0;
+  }
+  .review-bg, .review-arrow, .review-dots { display: none; }
 }
 
 /* Footer contact-links met icoon */
