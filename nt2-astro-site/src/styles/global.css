@@ -1252,6 +1252,8 @@ textarea { min-height: 140px; resize: vertical; }
   .cta-strip-strong h2,
   .cta-strip-strong p { color: inherit; }
   .cta-strip-strong .muted { color: var(--muted); }
+  .cta-strip-strong .btn-primary { background: var(--accent); color: #fff; }
+  .cta-strip-strong .btn-ghost { border-color: var(--accent); color: var(--accent); }
 
   /* Resultaten blokken: zelfde paarse border als about-check-list */
   .resultaten-check-list li {
