@@ -263,6 +263,12 @@ textarea { min-height: 140px; resize: vertical; }
     padding: 1.75rem;
     text-align: left;
   }
+  .review-stars-mini {
+    color: #f5a623;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+  }
   .review-text {
     color: var(--text);
     font-style: italic;
@@ -1204,6 +1210,14 @@ textarea { min-height: 140px; resize: vertical; }
     font-weight: 800;
     letter-spacing: 0.05em;
     margin: 0;
+  }
+
+  .review-stars-mini {
+    color: #f5a623;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.4rem;
+    position: relative;
+    z-index: 3;
   }
 
   /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:hidden op .review-slider) */
