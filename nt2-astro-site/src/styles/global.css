@@ -210,7 +210,7 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.25rem;
 }
 
@@ -242,7 +242,7 @@ textarea { min-height: 140px; resize: vertical; }
 }
 
 /* Footer contactblok – alleen mobiel */
-.footer-contact-mobile { display: none; }
+.footer-contact-mobile { display: block; }
 
 /* Reviews */
 .reviews-h2 { margin-bottom: 0.5rem; }
