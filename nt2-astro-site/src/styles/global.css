@@ -280,7 +280,7 @@ textarea { min-height: 140px; resize: vertical; }
     color: var(--accent-dark);
     margin: 0;
   }
-  .review-bg, .review-arrow, .review-dots { display: none; }
+  .review-arrow, .review-dots { display: none; }
 }
 
 /* Footer contact-links met icoon */
@@ -438,8 +438,15 @@ textarea { min-height: 140px; resize: vertical; }
   flex-wrap: wrap;
 }
 .kpi-strip .kpi { text-align: center; flex: 1; min-width: 120px; }
-.kpi-strip .kpi strong { font-size: 1.9rem; color: var(--accent); display: block; line-height: 1; }
-.kpi-strip .kpi span { font-size: 0.875rem; margin-top: 0.3rem; display: block; }
+.kpi-strip .kpi .bedrijven-icon { margin-bottom: 0.6rem; }
+.kpi-strip .kpi span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+}
+.kpi-strip .kpi strong { font-size: 1.9rem; color: var(--accent); display: block; line-height: 1; margin-top: 0.35rem; }
 .kpi-divider {
   width: 1px;
   height: 3rem;
@@ -449,15 +456,27 @@ textarea { min-height: 140px; resize: vertical; }
 
 /* ── Stap-kaarten ── */
 .step-card { position: relative; padding: 2rem 1.75rem 1.75rem; }
-.step-num {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--accent-soft);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.03em;
-  -webkit-text-stroke: 2px var(--accent);
+.step-icon-wrap {
+  position: relative;
+  width: 40px;
+  margin-bottom: 0.85rem;
+}
+.step-icon-wrap .step-icon { margin: 0; }
+.step-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
 }
 
 /* ── Kaart met accentachtergrond ── */
@@ -729,14 +748,31 @@ textarea { min-height: 140px; resize: vertical; }
   .hero-portrait { height: 320px; object-position: center 20%; }
   .about-portrait { height: 300px; }
   .about-img-wrap { order: -1; }
-  .kpi-strip { flex-direction: row; flex-wrap: wrap; gap: 1.25rem; padding: 1.5rem; }
+  /* KPI-strip: nette 2x2 met kruislijnen i.p.v. een lange stapel */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0.5rem;
+  }
+  .kpi-strip .kpi {
+    min-width: 0;
+    padding: 1.1rem 0.75rem;
+  }
+  .kpi-strip .kpi .bedrijven-icon { width: 34px; height: 34px; margin: 0 auto 0.5rem; }
+  .kpi-strip .kpi .bedrijven-icon svg { width: 18px; height: 18px; }
+  .kpi-strip .kpi strong { font-size: 1.4rem; margin-top: 0.25rem; }
+  .kpi-strip .kpi span { font-size: 0.7rem; }
+  .kpi-strip .kpi:nth-child(1),
+  .kpi-strip .kpi:nth-child(5) {
+    border-right: 1px solid var(--line);
+  }
+  .kpi-strip .kpi:nth-child(1),
+  .kpi-strip .kpi:nth-child(3) {
+    border-bottom: 1px solid var(--line);
+  }
   .kpi-divider { display: none; }
-  .kpi-strip .kpi { min-width: calc(50% - 1rem); }
   .hero-new { padding: 1.25rem 0 2rem; }
-}
-
-@media (max-width: 480px) {
-  .kpi-strip .kpi { min-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1085,186 +1121,104 @@ textarea { min-height: 140px; resize: vertical; }
   }
 
 
-  /* ── Review Slider ──────────────────────────────── */
-
-  /*
-   * DEFINITIEVE OVERFLOW FIX:
-   * Eerdere pogingen (overflow:hidden, overflow:clip, contain:layout) werkten
-   * niet omdat .review-track nog IN DE NORMALE FLOW stond (position: relative).
-   * Een flex-track met 3 × flex:0 0 100% heeft een intrinsieke content-breedte
-   * van 300%. Browsers kunnen die meenemen bij grid min-content berekeningen,
-   * zelfs met overflow:hidden op de parent.
-   *
-   * ECHTE FIX: .review-track → position: absolute
-   * Absolute elementen zijn VOLLEDIG UIT DE FLOW — ze beïnvloeden
-   * nooit meer de breedte van enig ouder-element.
-   * .review-slider (position:relative) is het containing block.
-   */
+  /* ── Review Slider (mobiel) — rustige kaartenstijl, zelfde als desktop ── */
   .review-slider-wrap {
-    width: 100vw;        /* volledige schermbreedte */
-    margin-left: -1rem;  /* compenseert container-marge links */
-    overflow: hidden;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    height: 360px;       /* zelfde hoogte als .review-slider */
+    margin-top: 1.5rem;
+    margin-bottom: 0;
   }
 
   .review-slider {
-    position: relative;  /* containing block voor de absolute track */
-    width: 100%;         /* = 100vw van de wrapper */
-    height: 360px;
-    overflow: hidden;    /* knipt de slides rechts af */
+    position: relative; /* containing block voor de pijltjes */
   }
 
-  /* Achtergrond */
-  .review-bg {
-    position: absolute;
-    inset: 0;
-    background-color: #f7f8fa;
-    background-image: url('/images/favicon.png');
-    background-position: center;
-    background-size: auto 350px;
-    background-repeat: no-repeat;
-    filter: opacity(0.18);
-    z-index: 0;
+  /* Viewport knipt alleen de track af, niet de pijltjes eromheen */
+  .review-viewport {
+    overflow: hidden;
+    border-radius: var(--radius);
   }
 
-  /* Overlay: uitgeschakeld bij witte achtergrond */
-  .review-overlay {
-    display: none;
-  }
-
-  /*
-   * Track: POSITION ABSOLUTE — de drie slides staan naast elkaar maar zijn
-   * volledig uit de flow. De track kan dus nooit de pagina-breedte opblazen.
-   * Breedte = 100% van .review-slider (het containing block).
-   */
   .review-track {
-    position: absolute; /* ← KEY FIX: uit de normale flow */
-    top: 0;
-    left: 0;
-    width: 100%;        /* 100% van .review-slider */
-    height: 100%;
     display: flex;
-    z-index: 2;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
   }
 
-  /* Slides: elk exact de breedte van de slider */
   .review-slide {
-    flex: 0 0 100%;     /* 100% van track = 100% van slider */
+    flex: 0 0 100%;
     min-width: 0;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2.25rem 3rem;
-    text-align: center;
     box-sizing: border-box;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    text-align: left;
   }
 
   .review-text {
-    color: #3b0764;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.8;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.65;
     font-style: italic;
     margin: 0 0 0.75rem;
-    text-shadow: none;
-    position: relative;
-    padding: 0.5rem 1.6rem;
-  }
-
-  .review-text::before {
-    content: '\201C';
-    position: absolute;
-    top: -0.3rem;
-    left: 0;
-    font-size: 2.8rem;
-    font-weight: 900;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #3b0764;
-    font-style: normal;
-    line-height: 1;
-  }
-
-  .review-text::after {
-    content: '\201D';
-    position: absolute;
-    bottom: -0.3rem;
-    right: 0;
-    font-size: 2.8rem;
-    font-weight: 900;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #3b0764;
-    font-style: normal;
-    line-height: 1;
   }
 
   .review-name {
-    color: #3b0764;
+    color: var(--accent-dark);
     font-size: 0.95rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
     margin: 0;
   }
 
   .review-stars-mini {
     color: #f5a623;
     letter-spacing: 0.1em;
-    margin: 0 0 0.4rem;
-    position: relative;
-    z-index: 3;
+    margin: 0 0 0.6rem;
   }
 
-  /* Pijltjes: positie absoluut binnen slider (geclipt door overflow:hidden op .review-slider) */
+  /* Pijltjes: buiten de viewport, dus altijd goed zichtbaar */
   .review-arrow {
     position: absolute;
-    top: 44%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 5;
-    background: transparent;
-    border: 1px solid rgba(59, 7, 100, 0.12);
-    color: rgba(59, 7, 100, 0.3);
-    font-size: 1.6rem;
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
     line-height: 1;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    box-shadow: 0 2px 8px rgba(24, 48, 58, 0.25);
     transition: background 0.2s;
   }
-  .review-arrow:hover { background: rgba(59, 7, 100, 0.2); }
-  .review-prev { left: 22px; }
-  .review-next { right: 22px; }
+  .review-arrow:hover { background: var(--accent-dark); }
+  .review-prev { left: -10px; }
+  .review-next { right: -10px; }
 
   /* Dots */
   .review-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 0; right: 0;
     display: flex;
     justify-content: center;
     gap: 7px;
-    z-index: 5;
+    margin-top: 1rem;
   }
   .review-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
+    background: var(--line);
     cursor: pointer;
     transition: background 0.25s, transform 0.25s;
   }
   .review-dot.active {
-    background: #fff;
+    background: var(--accent);
     transform: scale(1.3);
   }
 
@@ -1353,9 +1307,25 @@ textarea { min-height: 140px; resize: vertical; }
   .hero-lead-desktop { display: none; }
 
   .hero-lead-mobile {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
     margin-top: 0.75rem;
   }
+  .hero-pills li {
+    background: var(--soft);
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    list-style: none;
+  }
+
+  /* Volgorde: eerst alle voordelen, dan pas de knop */
+  .hero-new-text { display: flex; flex-direction: column; }
+  .hero-btn-row { order: 10; }
 
   /* Divider: lijn — punt — lijn */
   .hero-divider {
