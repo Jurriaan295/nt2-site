@@ -149,10 +149,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <section class="alt">
-      <div class="container" style="padding-top:0.5rem;padding-bottom:2.5rem;">
-        <p class="muted-link-label">Meer informatie:</p>
-        <ul class="meer-info">
+    <section style="padding-top:0;padding-bottom:2.5rem;">
+      <div class="container" style="padding-top:1.5rem;border-top:1px solid var(--line);">
+        <p class="muted" style="margin-bottom:0.5rem;">Meer informatie:</p>
+        <ul class="meer-info-list">
           <li><a href="/nt2-voor-particulieren/">Nederlandse les voor particulieren</a></li>
           <li><a href="/nederlandse-les-friesland/">Nederlandse les in Friesland</a></li>
           <li><a href="/nederlandse-les-nederland/">Nederlandse les in Nederland</a></li>
@@ -239,8 +239,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .cta-box .btn.primary{background:#fff;color:#0b5360;}
   .cta-box .btn.ghost{border-color:rgba(255,255,255,.6);color:#fff;}
 
-  .muted-link-label{color:#9a8266;font-size:.85rem;margin:0 0 .5rem;}
-  .meer-info{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1rem;}
-  .meer-info a{color:#0f6c7c;font-size:.9rem;font-weight:600;text-decoration:none;}
-  .meer-info a:hover{text-decoration:underline;}
+  .meer-info-list a{color:#0f6c7c;font-weight:600;font-size:.85rem;text-decoration:none;}
+  .meer-info-list a:hover{text-decoration:underline;}
+  .meer-info-list li::before{content:'–';font-size:.85rem;line-height:1;}
 </style>
