@@ -1,91 +1,46 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import StadPagina from '../components/StadPagina.astro';
 ---
-<BaseLayout
+<StadPagina
   title="Nederlandse les in Groningen | Kristina Tjalsma"
   description="Nederlandse les in Groningen voor particulieren en bedrijven. Op locatie of online, maatwerk voor elk niveau. Ervaring in energie, zorg, agro en logistiek."
->
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow" style="text-align: center;">Werkgebied · Groningen</p>
-      <h1>Nederlandse les in Groningen – op locatie en online</h1>
-
-      <p class="lead">Op zoek naar Nederlandse les in Groningen? Ik geef persoonlijke en praktische lessen voor particulieren en bedrijven in Groningen en omgeving — op de werkvloer, op locatie of online, altijd afgestemd op jouw situatie en leerdoelen.</p>
-
-      <p class="muted" style="font-size: 0.8rem; margin-bottom: 0.4rem; margin-top: 1.5rem;">Sectoren in de regio Groningen</p>
-      <div class="sector-tags" style="margin-top: 0;">
-        <span class="sector-tag">Energie &amp; aardgas</span>
-        <span class="sector-tag">Agro &amp; voedingsverwerking</span>
-        <span class="sector-tag">Zorg &amp; welzijn</span>
-        <span class="sector-tag">Logistiek &amp; transport</span>
-        <span class="sector-tag">Onderwijs &amp; research</span>
-        <span class="sector-tag">Bouw &amp; techniek</span>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
-        <div class="surface card" style="text-align: center; padding: 1rem;">
-          <p style="font-size: 1.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.2rem;">A0–C1</p>
-          <p class="muted" style="font-size: 0.75rem; margin: 0;">Alle niveaus</p>
-        </div>
-        <div class="surface card" style="text-align: center; padding: 1rem;">
-          <p style="font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.2rem;">Op locatie of online</p>
-          <p class="muted" style="font-size: 0.75rem; margin: 0;">Naar keuze</p>
-        </div>
-        <div class="surface card" style="text-align: center; padding: 1rem;">
-          <p style="font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.2rem;">Gratis intake</p>
-          <p class="muted" style="font-size: 0.75rem; margin: 0;">Persoonlijk kennismaken</p>
-        </div>
-      </div>
-
-      <div class="grid grid-2" style="margin-top: 1.5rem;">
-        <div class="surface card">
-          <h2 style="font-size: 1.15rem;">Voor particulieren in Groningen</h2>
-          <p>Voor particulieren in Groningen geef ik flexibele Nederlandse les op maat — volledig online. Ideaal voor expats, arbeidsmigranten en anderstaligen die zich willen inburgeren of hun Nederlands willen verbeteren voor werk of studie.</p>
-          <p class="muted" style="font-size: 0.82rem; margin-bottom: 0;">Niveaus: A0 · A1 · A2 · B1 · B2</p>
-        </div>
-        <div class="surface card">
-          <h2 style="font-size: 1.15rem;">Voor bedrijven in Groningen</h2>
-          <p>Voor bedrijven in Groningen en de regio verzorg ik Nederlandse les op de werkvloer — op locatie of online. Medewerkers leren de taal die ze dagelijks nodig hebben: communiceren, instructies begrijpen en samenwerken.</p>
-          <p class="muted" style="font-size: 0.82rem; margin-bottom: 0;">Groepsles · Individueel · In-company maatwerk</p>
-        </div>
-      </div>
-
-      <div class="surface card" style="margin-top: 1.5rem;">
-        <h2 style="font-size: 1.15rem;">Altijd maatwerk – ook voor Groningse sectoren</h2>
-        <p>Elk traject begint met een persoonlijke intake. Werken uw medewerkers in de energiesector, de zorg of de logistiek? Dan sluit de les aan op de specifieke vaktaal en situaties die zij dagelijks tegenkomen in Groningen en omgeving.</p>
-        <p class="muted" style="margin-bottom: 0; font-size: 0.9rem;">Of u nu kiest voor les op locatie in Groningen of online: ik zorg voor zichtbaar resultaat.</p>
-      </div>
-
-      <div style="margin-top: 2rem;">
-        <p class="muted" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Veelgestelde vragen – Groningen</p>
-
-        <div class="surface card" style="margin-bottom: 0.75rem;">
-          <h3>Geeft u ook les op locatie in de stad Groningen zelf?</h3>
-          <p style="margin-bottom: 0;">Ja. Ik kom op locatie bij bedrijven in Groningen en omgeving. Online lessen zijn ook mogelijk voor teams verspreid over de regio.</p>
-        </div>
-        <div class="surface card" style="margin-bottom: 0.75rem;">
-          <h3>Zijn er lessen voor anderstalige medewerkers in de agrosector?</h3>
-          <p style="margin-bottom: 0;">Ja. Ik heb ervaring met anderstalige medewerkers in de agro- en voedingsindustrie. De lessen focussen op praktische werktaal: veiligheidsinstructies, samenwerking en klantcommunicatie.</p>
-        </div>
-        <div class="surface card">
-          <h3>Zijn de lessen ook geschikt voor expats bij bedrijven in Groningen?</h3>
-          <p style="margin-bottom: 0;">Ja. Ik werk regelmatig met expats en kennismigranten, ook in de research- en onderwijssector rondom de Rijksuniversiteit Groningen.</p>
-        </div>
-      </div>
-
-      <div style="margin-top: 2rem; text-align: center;">
-        <a class="btn btn-primary about-offerte-btn" href="/offerte-aanvragen/">Offerte aanvragen</a>
-      </div>
-
-      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line);">
-        <p class="muted" style="margin-bottom: 0.5rem;">Meer informatie:</p>
-        <ul class="meer-info-list">
-          <li><a href="/nt2-voor-bedrijven/">Nederlandse les voor bedrijven</a></li>
-          <li><a href="/nt2-voor-particulieren/">Nederlandse les voor particulieren</a></li>
-          <li><a href="/nederlandse-les-nederland/">Nederlandse les in Nederland</a></li>
-          <li><a href="/faq/">Veelgestelde vragen</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  werkgebied="Werkgebied · Groningen"
+  h1="Nederlandse les in Groningen – op locatie en online"
+  lead="Op zoek naar Nederlandse les in Groningen? Ik geef persoonlijke en praktische lessen voor particulieren en bedrijven in Groningen en omgeving — op de werkvloer, op locatie of online, altijd afgestemd op jouw situatie en leerdoelen."
+  sectors={{
+    label: 'Sectoren in de regio Groningen',
+    tags: ['Energie & aardgas', 'Agro & voedingsverwerking', 'Zorg & welzijn', 'Logistiek & transport', 'Onderwijs & research', 'Bouw & techniek'],
+  }}
+  showStats={true}
+  particulieren={{
+    title: 'Voor particulieren in Groningen',
+    paragraphs: ['Voor particulieren in Groningen geef ik flexibele Nederlandse les op maat — volledig online. Ideaal voor expats, arbeidsmigranten en anderstaligen die zich willen inburgeren of hun Nederlands willen verbeteren voor werk of studie.'],
+    note: 'Niveaus: A0 · A1 · A2 · B1 · B2',
+  }}
+  bedrijven={{
+    title: 'Voor bedrijven in Groningen',
+    paragraphs: ['Voor bedrijven in Groningen en de regio verzorg ik Nederlandse les op de werkvloer — op locatie of online. Medewerkers leren de taal die ze dagelijks nodig hebben: communiceren, instructies begrijpen en samenwerken.'],
+    note: 'Groepsles · Individueel · In-company maatwerk',
+  }}
+  maatwerk={{
+    title: 'Altijd maatwerk – ook voor Groningse sectoren',
+    paragraphs: [
+      'Elk traject begint met een persoonlijke intake. Werken uw medewerkers in de energiesector, de zorg of de logistiek? Dan sluit de les aan op de specifieke vaktaal en situaties die zij dagelijks tegenkomen in Groningen en omgeving.',
+      'Of u nu kiest voor les op locatie in Groningen of online: ik zorg voor zichtbaar resultaat.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen – Groningen',
+    items: [
+      { q: 'Geeft u ook les op locatie in de stad Groningen zelf?', a: 'Ja. Ik kom op locatie bij bedrijven in Groningen en omgeving. Online lessen zijn ook mogelijk voor teams verspreid over de regio.' },
+      { q: 'Zijn er lessen voor anderstalige medewerkers in de agrosector?', a: 'Ja. Ik heb ervaring met anderstalige medewerkers in de agro- en voedingsindustrie. De lessen focussen op praktische werktaal: veiligheidsinstructies, samenwerking en klantcommunicatie.' },
+      { q: 'Zijn de lessen ook geschikt voor expats bij bedrijven in Groningen?', a: 'Ja. Ik werk regelmatig met expats en kennismigranten, ook in de research- en onderwijssector rondom de Rijksuniversiteit Groningen.' },
+    ],
+  }}
+  meerInfo={[
+    { href: '/nt2-voor-bedrijven/', label: 'Nederlandse les voor bedrijven' },
+    { href: '/nt2-voor-particulieren/', label: 'Nederlandse les voor particulieren' },
+    { href: '/nederlandse-les-nederland/', label: 'Nederlandse les in Nederland' },
+    { href: '/faq/', label: 'Veelgestelde vragen' },
+  ]}
+/>

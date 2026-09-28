@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  werkgebied: string;
+  h1: string;
+  lead: string;
+  sectors?: { label: string; tags: string[] };
+  showStats?: boolean;
+  particulieren: { title: string; paragraphs: string[]; note?: string };
+  bedrijven: { title: string; paragraphs: string[]; note?: string };
+  maatwerk: { title: string; paragraphs: string[] };
+  faq?: { title: string; items: { q: string; a: string }[] };
+  meerInfo: { href: string; label: string }[];
+}
+
+const { title, description, werkgebied, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <div class="pg">
+    <section>
+      <div class="container">
+        <span class="eyebrow" style="text-align:center;display:block;">{werkgebied}</span>
+        <h1 style="text-align:center;max-width:none;">{h1}</h1>
+        <p class="lead" style="text-align:center;max-width:640px;margin:0 auto;">{lead}</p>
+
+        {sectors && (
+          <div style="margin-top:2rem;">
+            <p class="muted-label">{sectors.label}</p>
+            <div class="tags" style="justify-content:center;">
+              {sectors.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        )}
+
+        {showStats && (
+          <div class="stats-row">
+            <div class="stat"><strong>A0–C1</strong><span>Alle niveaus</span></div>
+            <div class="stat"><strong>Op locatie of online</strong><span>Naar keuze</span></div>
+            <div class="stat"><strong>Gratis intake</strong><span>Persoonlijk kennismaken</span></div>
+          </div>
+        )}
+
+        <div class="grid-2" style="margin-top:2rem;">
+          <div class="benefit">
+            <h3>{particulieren.title}</h3>
+            {particulieren.paragraphs.map(p => <p>{p}</p>)}
+            {particulieren.note && <p class="note">{particulieren.note}</p>}
+          </div>
+          <div class="benefit">
+            <h3>{bedrijven.title}</h3>
+            {bedrijven.paragraphs.map(p => <p>{p}</p>)}
+            {bedrijven.note && <p class="note">{bedrijven.note}</p>}
+          </div>
+        </div>
+
+        <div class="why-box" style="margin-top:1.5rem;">
+          <h2>{maatwerk.title}</h2>
+          {maatwerk.paragraphs.map(p => <p class="lead" style="font-size:.95rem;">{p}</p>)}
+        </div>
+
+        {faq && (
+          <div style="margin-top:2.5rem;">
+            <p class="muted-label">{faq.title}</p>
+            <div class="faq-list">
+              {faq.items.map(item => (
+                <div class="faq-item">
+                  <h3>{item.q}</h3>
+                  <p>{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="cta-box" style="margin-top:2.5rem;">
+          <h2>Zullen we kennismaken?</h2>
+          <p style="margin-bottom:1.2rem;">Vertel me over je situatie, ik denk graag met je mee. Reactie binnen 24 uur.</p>
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn primary" href="/contact/">Plan een kennismaking</a>
+            <a class="btn ghost" href="/offerte-aanvragen/">Offerte aanvragen</a>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);">
+          <p class="muted" style="margin-bottom:0.5rem;">Meer informatie:</p>
+          <ul class="meer-info-list">
+            {meerInfo.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .pg{ background:#fdf8f2; color:#3d2b1a; font-family:"IBM Plex Sans", system-ui, sans-serif; }
+  .pg h1,.pg h2{ font-family:"Fraunces", Georgia, serif; color:#3a2711; font-weight:600; }
+  .pg .lead,.pg p{ color:#6d5638; }
+  .pg .eyebrow{ font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase; color:#b5651d; margin-bottom:.6rem;}
+  .pg h1{font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.2;margin-bottom:1rem;}
+  .pg h2{font-size:clamp(1.25rem,2.2vw,1.5rem);margin-bottom:.7rem;}
+  .pg .lead{font-size:1.02rem;line-height:1.6;margin-bottom:0;}
+  .pg section{padding:3.4rem 1.5rem;}
+  .pg .container{max-width:860px;margin:0 auto;}
+
+  .muted-label{color:#9a8266;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:0 0 .75rem;text-align:center;}
+
+  .tags{display:flex;flex-wrap:wrap;gap:.55rem;}
+  .tag{padding:.5rem 1rem;border-radius:999px;font-size:.85rem;font-weight:600;background:#fbe6cc;color:#8a4c14;}
+
+  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.6rem;}
+  @media (max-width:700px){ .stats-row{grid-template-columns:1fr;} }
+  .stat{background:#fffaf3;border:1px solid #f0ddc4;border-radius:16px;padding:1rem;text-align:center;}
+  .stat strong{display:block;font-family:"Fraunces",serif;color:#0f6c7c;font-size:1.05rem;margin-bottom:.2rem;}
+  .stat span{font-size:.78rem;color:#9a8266;}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+  @media (max-width:700px){ .grid-2{grid-template-columns:1fr;} }
+  .benefit{background:#fffaf3;border:1px solid #f0ddc4;border-radius:20px;padding:1.5rem;box-shadow:0 8px 20px rgba(120,80,40,.07);}
+  .benefit h3{font-size:1.1rem;margin:0 0 .6rem;font-family:"Fraunces",serif;font-weight:600;color:#3a2711;}
+  .benefit p{font-size:.92rem;line-height:1.55;margin:0 0 .6rem;color:#7a5a3a;}
+  .benefit p:last-child{margin-bottom:0;}
+  .benefit .note{font-size:.8rem;color:#9a8266;font-weight:600;}
+
+  .why-box{background:#fbeee0;border:1px solid #f0ddc4;border-radius:20px;padding:1.7rem;}
+  .why-box p{margin-bottom:.6rem;}
+  .why-box p:last-child{margin-bottom:0;}
+
+  .faq-list{display:flex;flex-direction:column;gap:.8rem;}
+  .faq-item{background:#fffaf3;border:1px solid #f0ddc4;border-radius:16px;padding:1.1rem 1.3rem;}
+  .faq-item h3{font-size:.98rem;margin:0 0 .4rem;font-family:"Fraunces",serif;font-weight:600;color:#3a2711;}
+  .faq-item p{font-size:.88rem;line-height:1.5;margin:0;color:#7a5a3a;}
+
+  .btn-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid transparent;}
+  .btn.primary{background:#0f6c7c;color:#fff;}
+  .btn.primary:hover{background:#0b5360;}
+  .btn.ghost{background:transparent;border-color:#b5651d;color:#b5651d;}
+  .btn.ghost:hover{background:rgba(181,101,29,.08);}
+
+  .cta-box{border-radius:22px;padding:2.1rem;text-align:center;background:linear-gradient(135deg,#0f6c7c,#0b5360);color:#fff;}
+  .cta-box h2{color:#fff;}
+  .cta-box p{color:rgba(255,255,255,.85);}
+  .cta-box .btn.primary{background:#fff;color:#0b5360;}
+  .cta-box .btn.ghost{border-color:rgba(255,255,255,.6);color:#fff;}
+
+  .meer-info-list{list-style:none;margin:0;padding:0;}
+  .meer-info-list li{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem;}
+  .meer-info-list li::before{content:'–';color:#0f6c7c;font-size:.85rem;line-height:1;}
+  .meer-info-list a{color:#0f6c7c;font-weight:600;font-size:.85rem;text-decoration:none;}
+  .meer-info-list a:hover{text-decoration:underline;}
+</style>
