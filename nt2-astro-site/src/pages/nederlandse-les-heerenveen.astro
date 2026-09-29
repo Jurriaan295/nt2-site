@@ -5,8 +5,18 @@ import StadPagina from '../components/StadPagina.astro';
   title="Nederlandse les in Heerenveen | Kristina Tjalsma"
   description="Nederlandse les in Heerenveen voor particulieren en bedrijven. Flexibele lessen op locatie of online. Persoonlijk en op maat voor elk niveau."
   werkgebied="Werkgebied · Heerenveen"
+  stad="Heerenveen"
+  about={{
+    intro: 'Taal leren werkt het best wanneer het aansluit bij je dagelijkse praktijk. Daarom kijk ik in Heerenveen altijd eerst naar de situatie van de deelnemer, voordat we met de lessen beginnen.',
+    checklist: ['Gecertificeerd NT2-docent', 'Lesplan volledig op maat', 'Begeleiding van A0 tot C1'],
+  }}
   h1="Nederlandse les in Heerenveen – op locatie en online"
   lead="Op zoek naar Nederlandse les in Heerenveen? Ik geef praktische lessen voor particulieren en bedrijven in Heerenveen en omgeving. Op locatie of online, persoonlijk en direct toepasbaar in de dagelijkse praktijk."
+  sectors={{
+    label: 'Sectoren in de regio Heerenveen',
+    tags: ['Sport & recreatie', 'Agro & zuivel', 'Retail & groothandel', 'Zorg & welzijn', 'Bouw & techniek'],
+  }}
+  showStats={true}
   particulieren={{
     title: 'Voor particulieren',
     paragraphs: ['Voor particulieren in Heerenveen geef ik Nederlandse les op locatie of online. Ik stem de lessen af op jouw niveau, tempo en doelen. Of je nu net begint of je Nederlands wil verbeteren voor werk — ik help je gericht vooruit.'],
@@ -20,6 +30,14 @@ import StadPagina from '../components/StadPagina.astro';
     paragraphs: [
       'Elk traject in Heerenveen begint met een persoonlijke intake. Op basis daarvan stel ik een lesplan op dat aansluit op de situatie, het niveau en de leerdoelen van de deelnemer. Zo leer je Nederlands op een manier die direct toepasbaar is.',
       'Of je nu kiest voor Nederlandse les op locatie in Heerenveen of online begeleiding: ik zorg voor zichtbaar resultaat.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen – Heerenveen',
+    items: [
+      { q: 'Geeft u ook Nederlandse les op locatie in Heerenveen?', a: 'Ja, ik kom op locatie bij bedrijven en particulieren in Heerenveen en de regio Zuidoost-Friesland. Online les is ook mogelijk.' },
+      { q: 'Zijn er lessen voor medewerkers in de agrarische of zuivelsector?', a: 'Ja, ik heb ervaring met anderstalige medewerkers in de agro- en zuivelindustrie rond Heerenveen. De lessen zijn gericht op praktische werktaal.' },
+      { q: 'Kan ik ook Nederlandse les volgen als ik nog niet goed Nederlands spreek?', a: 'Ja, de lessen zijn geschikt voor alle niveaus, van absolute beginner (A0) tot gevorderd (C1).' },
     ],
   }}
   meerInfo={[

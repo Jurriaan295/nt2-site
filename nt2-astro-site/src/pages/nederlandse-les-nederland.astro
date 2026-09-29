@@ -5,8 +5,18 @@ import StadPagina from '../components/StadPagina.astro';
   title="Nederlandse les in Nederland | Kristina Tjalsma"
   description="Nederlandse les in Nederland voor particulieren online en bedrijven op locatie. Persoonlijk en praktisch, maatwerk voor elk niveau."
   werkgebied="Werkgebied"
+  stad="Nederland"
+  about={{
+    intro: 'Waar in Nederland je ook zit — via online les werk ik met je aan zelfverzekerder Nederlands, op een manier die past bij jouw tempo en situatie.',
+    checklist: ['Gecertificeerd NT2-docent', 'Online les, waar je ook woont', 'Persoonlijke intake en maatwerk lesplan'],
+  }}
   h1="Nederlandse les in Nederland – op locatie en online"
   lead="Ben je op zoek naar Nederlandse les in Nederland die flexibel en persoonlijk is? Ik bied praktische en effectieve lessen voor particulieren en bedrijven, volledig afgestemd op jouw situatie. Of je nu online wilt leren of lessen op locatie nodig hebt: ik help je gericht vooruit."
+  sectors={{
+    label: 'Sectoren door heel Nederland',
+    tags: ['Techniek & industrie', 'Zorg & welzijn', 'Logistiek & transport', 'Overheid & onderwijs', 'Zakelijke dienstverlening'],
+  }}
+  showStats={true}
   particulieren={{
     title: 'Voor particulieren',
     paragraphs: [
@@ -26,6 +36,14 @@ import StadPagina from '../components/StadPagina.astro';
     paragraphs: [
       'Mijn aanpak is altijd maatwerk. Geen standaard lessen, maar een traject dat aansluit op het niveau, tempo en de leerdoelen van de deelnemer. Met persoonlijke begeleiding en praktische oefeningen zorg ik voor zichtbaar resultaat en meer zelfvertrouwen in het gebruik van de Nederlandse taal.',
       'Of je nu kiest voor online Nederlandse les of een training op locatie binnen jouw bedrijf: je leert Nederlands op een manier die direct toepasbaar is in de praktijk.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen',
+    items: [
+      { q: 'Geeft u ook online Nederlandse les als ik niet in Friesland woon?', a: 'Ja, voor particulieren en bedrijven buiten Friesland geef ik online les, waar in Nederland je ook woont.' },
+      { q: 'Zijn de online lessen net zo persoonlijk als lessen op locatie?', a: 'Ja, ook online werk ik met een persoonlijke intake en een lesplan dat is afgestemd op jouw niveau en doelen.' },
+      { q: 'Kan ik via online les ook werken aan mijn inburgering of NT2-examen?', a: 'Zeker, de online lessen zijn ook geschikt om gericht te werken aan je inburgering of NT2-niveau.' },
     ],
   }}
   meerInfo={[

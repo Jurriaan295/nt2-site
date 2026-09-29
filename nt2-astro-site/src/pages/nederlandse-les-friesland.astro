@@ -5,8 +5,18 @@ import StadPagina from '../components/StadPagina.astro';
   title="Nederlandse les in Friesland | Kristina Tjalsma"
   description="Nederlandse les in Friesland voor particulieren en bedrijven. Op locatie of online in Leeuwarden, Drachten, Sneek en Heerenveen. Persoonlijk en op maat."
   werkgebied="Werkgebied"
+  stad="Friesland"
+  about={{
+    intro: 'Ik geef al jarenlang Nederlandse les door heel Friesland — bij bedrijven, instellingen en particulieren thuis. Elke les is anders, omdat elke deelnemer anders is.',
+    checklist: ['Gecertificeerd NT2-docent', 'Maatwerk in plaats van een vaste methode', 'Actief in Leeuwarden, Drachten, Sneek, Heerenveen en de rest van Friesland'],
+  }}
   h1="Nederlandse les in Friesland – op locatie en online"
   lead="Ben je op zoek naar effectieve Nederlandse les in Friesland? Ik bied praktische en persoonlijke lessen voor zowel particulieren als bedrijven, volledig afgestemd op jouw situatie. Of het nu gaat om een medewerker op de werkvloer of een particulier die beter Nederlands wil leren spreken: ik zorg voor een aanpak die werkt."
+  sectors={{
+    label: 'Sectoren in Friesland',
+    tags: ['Agro & zuivel', 'Toerisme & watersport', 'Zorg & welzijn', 'Onderwijs & overheid', 'Bouw & techniek'],
+  }}
+  showStats={true}
   particulieren={{
     title: 'Voor particulieren',
     paragraphs: [
@@ -26,6 +36,14 @@ import StadPagina from '../components/StadPagina.astro';
     paragraphs: [
       'Mijn lessen zijn altijd maatwerk. Geen standaard methode, maar een aanpak die aansluit op het niveau, tempo en de doelen van de deelnemer. Met jarenlange ervaring in het geven van Nederlandse les begeleid ik zowel beginners als gevorderden naar zichtbaar resultaat.',
       'Of je nu kiest voor Nederlandse les op locatie in Friesland of online begeleiding: je leert Nederlands op een manier die direct toepasbaar is in de praktijk.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen – Friesland',
+    items: [
+      { q: 'In welke plaatsen in Friesland geeft u les?', a: 'Ik geef les in onder andere Leeuwarden, Drachten, Sneek, Heerenveen, Joure en de rest van Friesland — op locatie of online.' },
+      { q: 'Zijn de lessen ook geschikt voor medewerkers in de agrarische sector of watersport?', a: 'Ja, ik heb ruime ervaring met anderstalige medewerkers in sectoren die veel voorkomen in Friesland, zoals agro, zuivel en toerisme.' },
+      { q: 'Kan ik in Friesland ook Nederlandse les volgen voor mijn inburgering?', a: 'Ja, de lessen sluiten ook aan op wat nodig is voor je inburgering en NT2-niveau.' },
     ],
   }}
   meerInfo={[

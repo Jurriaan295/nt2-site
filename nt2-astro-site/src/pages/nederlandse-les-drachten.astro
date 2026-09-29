@@ -5,8 +5,18 @@ import StadPagina from '../components/StadPagina.astro';
   title="Nederlandse les in Drachten | Kristina Tjalsma"
   description="Nederlandse les in Drachten voor particulieren en bedrijven. Praktisch en persoonlijk, op locatie of online. Maatwerk voor elk niveau."
   werkgebied="Werkgebied · Drachten"
+  stad="Drachten"
+  about={{
+    intro: 'Ik geloof niet in één vaste methode voor iedereen. In Drachten en omgeving kijk ik per persoon of bedrijf wat werkt — en pas de lessen daarop aan, stap voor stap.',
+    checklist: ['Gecertificeerd NT2-docent', 'Persoonlijke intake vooraf', 'Van beginner tot gevorderd, altijd op maat'],
+  }}
   h1="Nederlandse les in Drachten – op locatie en online"
   lead="Op zoek naar Nederlandse les in Drachten? Ik geef praktische en persoonlijke lessen voor particulieren en bedrijven in Drachten en de Friese regio. Les op locatie, bij jou thuis, op het bedrijf of online — altijd op maat."
+  sectors={{
+    label: 'Sectoren in de regio Drachten',
+    tags: ['Techniek & high-tech industrie', 'Kunststof- en metaalverwerking', 'Zorg & welzijn', 'Bouw & installatietechniek', 'Logistiek'],
+  }}
+  showStats={true}
   particulieren={{
     title: 'Voor particulieren',
     paragraphs: ['Voor particulieren in Drachten geef ik Nederlandse les op maat, zowel op locatie als online. Woon je in of rondom Drachten? Dan kom ik naar jou toe. Praktisch, persoonlijk en direct toepasbaar in het dagelijks leven.'],
@@ -20,6 +30,14 @@ import StadPagina from '../components/StadPagina.astro';
     paragraphs: [
       'Ik sluit aan op het niveau, tempo en de leerdoelen van de deelnemer. Of het nu gaat om basiscommunicatie of gevorderd Nederlands — ik zorg voor een aanpak die werkt in de praktijk van Drachten en omgeving.',
       'Of je nu kiest voor Nederlandse les op locatie in Drachten of online begeleiding: je leert Nederlands op een manier die direct toepasbaar is.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen – Drachten',
+    items: [
+      { q: 'Verzorgt u ook Nederlandse les op locatie bij bedrijven in Drachten?', a: 'Ja, ik geef training op de werkvloer bij bedrijven in Drachten en omgeving. Online les is ook mogelijk.' },
+      { q: 'Zijn de lessen geschikt voor medewerkers in de techniek- of kunststofindustrie?', a: 'Ja, ik heb ervaring met anderstalige medewerkers in de technische en kunststofverwerkende industrie rond Drachten. De lessen richten zich op praktische werktaal en veiligheidsinstructies.' },
+      { q: 'Geeft u ook les in andere plaatsen in Friesland?', a: 'Ja, naast Drachten geef ik ook les in Leeuwarden, Heerenveen, Sneek en de rest van Friesland. Zie ook de pagina Nederlandse les in Friesland.' },
     ],
   }}
   meerInfo={[

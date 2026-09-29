@@ -5,8 +5,18 @@ import StadPagina from '../components/StadPagina.astro';
   title="Nederlandse les in Sneek | Kristina Tjalsma"
   description="Op zoek naar Nederlandse les in Sneek? Persoonlijke en praktische lessen voor particulieren en bedrijven, op locatie of online. Maatwerk voor elk niveau."
   werkgebied="Werkgebied · Sneek"
+  stad="Sneek"
+  about={{
+    intro: 'In Sneek geef ik al jaren Nederlandse les die direct aansluit op de praktijk van de deelnemer — geen droge lesboeken, maar taal die je meteen kunt gebruiken.',
+    checklist: ['Gecertificeerd NT2-docent', 'Elk traject begint met een persoonlijke intake', 'Ervaring van absolute beginner tot gevorderd'],
+  }}
   h1="Nederlandse les in Sneek – op locatie en online"
   lead="Op zoek naar Nederlandse les in Sneek? Ik geef persoonlijke en praktische lessen voor particulieren en bedrijven in Sneek en omgeving. Op locatie of online, altijd afgestemd op jouw situatie en leerdoelen."
+  sectors={{
+    label: 'Sectoren in de regio Sneek',
+    tags: ['Jachtbouw & watersport', 'Agro & zuivel', 'Toerisme & recreatie', 'Zorg & welzijn', 'Bouw & techniek'],
+  }}
+  showStats={true}
   particulieren={{
     title: 'Voor particulieren',
     paragraphs: ['Voor particulieren in Sneek geef ik flexibele Nederlandse les op maat. De lessen vinden plaats op locatie bij jou thuis of online. Ideaal voor expats en anderstaligen die zich willen inburgeren in Sneek of Nederlands willen verbeteren voor werk of studie.'],
@@ -20,6 +30,14 @@ import StadPagina from '../components/StadPagina.astro';
     paragraphs: [
       'Ik werk niet met een standaard methode, maar met lessen die aansluiten op de dagelijkse werkelijkheid van de deelnemer in Sneek. Van absolute beginner tot gevorderd — ik begeleid iedereen stap voor stap naar zichtbare resultaten.',
       'Of je nu kiest voor Nederlandse les op locatie in Sneek of online begeleiding: je leert Nederlands op een manier die direct toepasbaar is.',
+    ],
+  }}
+  faq={{
+    title: 'Veelgestelde vragen – Sneek',
+    items: [
+      { q: 'Geeft u ook Nederlandse les op locatie bij bedrijven in Sneek?', a: 'Ja, ik kom op locatie bij bedrijven in Sneek en de Friese meren regio. Online les is ook mogelijk.' },
+      { q: 'Zijn er lessen voor medewerkers in de jachtbouw of watersportsector?', a: 'Ja, ik heb ervaring met anderstalige medewerkers in de jachtbouw en watersportgerelateerde bedrijven rond Sneek.' },
+      { q: 'Geeft u ook les in andere plaatsen in Friesland?', a: 'Ja, naast Sneek geef ik ook les in Leeuwarden, Heerenveen, Drachten en de rest van Friesland.' },
     ],
   }}
   meerInfo={[

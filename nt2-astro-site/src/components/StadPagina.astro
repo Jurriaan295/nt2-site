@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description: string;
   werkgebied: string;
+  stad: string;
   h1: string;
   lead: string;
   sectors?: { label: string; tags: string[] };
@@ -14,9 +15,10 @@ interface Props {
   maatwerk: { title: string; paragraphs: string[] };
   faq?: { title: string; items: { q: string; a: string }[] };
   meerInfo: { href: string; label: string }[];
+  about: { intro: string; checklist: string[] };
 }
 
-const { title, description, werkgebied, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo } = Astro.props;
+const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo, about } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
   <div class="pg">
@@ -26,8 +28,23 @@ const { title, description, werkgebied, h1, lead, sectors, showStats, particulie
         <h1 style="text-align:center;max-width:none;">{h1}</h1>
         <p class="lead" style="text-align:center;max-width:640px;margin:0 auto;">{lead}</p>
 
+        <div class="about-block" style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line);">
+          <div class="about-photo">
+            <img src="/images/kristina2.jpeg" alt={`Kristina Tjalsma, NT2-docent Nederlandse les in ${stad}`} width="320" height="480" loading="lazy" />
+          </div>
+          <div>
+            <p class="muted-label about-label">Over de docent</p>
+            <h2 style="margin-bottom:.3rem;">Kristina Tjalsma</h2>
+            <p class="lead" style="font-size:.95rem;margin-bottom:.8rem;">Docent Nederlandse les op locatie in {stad}</p>
+            <p>{about.intro}</p>
+            <ul class="docent-list" style="margin-top:1rem;">
+              {about.checklist.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+
         {sectors && (
-          <div style="margin-top:2rem;">
+          <div style="margin-top:2.5rem;">
             <p class="muted-label">{sectors.label}</p>
             <div class="tags" style="justify-content:center;">
               {sectors.tags.map(tag => <span class="tag">{tag}</span>)}
@@ -36,14 +53,14 @@ const { title, description, werkgebied, h1, lead, sectors, showStats, particulie
         )}
 
         {showStats && (
-          <div class="stats-row">
+          <div class="stats-row" style={sectors ? '' : 'margin-top:2.5rem;'}>
             <div class="stat"><strong>A0–C1</strong><span>Alle niveaus</span></div>
             <div class="stat"><strong>Op locatie of online</strong><span>Naar keuze</span></div>
             <div class="stat"><strong>Gratis intake</strong><span>Persoonlijk kennismaken</span></div>
           </div>
         )}
 
-        <div class="grid-2" style="margin-top:2rem;">
+        <div class="grid-2" style="margin-top:2.2rem;">
           <div class="benefit">
             <h3>{particulieren.title}</h3>
             {particulieren.paragraphs.map(p => <p>{p}</p>)}
@@ -56,7 +73,7 @@ const { title, description, werkgebied, h1, lead, sectors, showStats, particulie
           </div>
         </div>
 
-        <div class="why-box" style="margin-top:1.5rem;">
+        <div class="why-box" style="margin-top:2.2rem;">
           <h2>{maatwerk.title}</h2>
           {maatwerk.paragraphs.map(p => <p class="lead" style="font-size:.95rem;">{p}</p>)}
         </div>
@@ -117,6 +134,22 @@ const { title, description, werkgebied, h1, lead, sectors, showStats, particulie
   .stat{background:#fffaf3;border:1px solid #f0ddc4;border-radius:16px;padding:1rem;text-align:center;}
   .stat strong{display:block;font-family:"Fraunces",serif;color:#0f6c7c;font-size:1.05rem;margin-bottom:.2rem;}
   .stat span{font-size:.78rem;color:#9a8266;}
+
+  .about-block{display:grid;grid-template-columns:220px 1fr;gap:1.8rem;align-items:center;}
+  .about-label{text-align:left;}
+  .about-photo{width:220px;}
+  .about-photo img{display:block;width:100%;height:auto;border-radius:20px;object-fit:cover;aspect-ratio:2/3;box-shadow:0 12px 26px rgba(120,80,40,.15);}
+  @media (max-width:700px){
+    .about-block{grid-template-columns:1fr;text-align:center;}
+    .about-label{text-align:center;}
+    .about-photo{width:160px;margin:0 auto;}
+    .docent-list{align-items:center;}
+    .docent-list li{display:flex;justify-content:center;padding-left:0;}
+    .docent-list li::before{position:static;margin-right:.5rem;}
+  }
+  .docent-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .docent-list li{font-size:.92rem;padding-left:1.4rem;position:relative;color:#4a341d;}
+  .docent-list li::before{content:"✓";position:absolute;left:0;color:#0f6c7c;font-weight:700;}
 
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
   @media (max-width:700px){ .grid-2{grid-template-columns:1fr;} }
