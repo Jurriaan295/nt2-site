@@ -262,7 +262,7 @@ textarea { min-height: 140px; resize: vertical; }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.75rem;
-    text-align: left;
+    text-align: center;
   }
   .review-stars-mini {
     color: #f5a623;
@@ -1163,7 +1163,7 @@ textarea { min-height: 140px; resize: vertical; }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
-    text-align: left;
+    text-align: center;
   }
 
   .review-text {
