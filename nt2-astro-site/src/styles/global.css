@@ -1304,14 +1304,14 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(3px);
   }
 
-  /* Trust-lists: elk item (icoon + tekst) gecentreerd */
-  .hero-lead-mobile,
-  .hero-new-text .trust-list {
+  /* Hero-pills: op één lijn, gecentreerd. Trust-list: blok gecentreerd, regels onderling links uitgelijnd */
+  .hero-lead-mobile {
     width: 100%;
   }
-  .hero-lead-mobile li,
-  .hero-new-text .trust-list li {
-    justify-content: center;
+  .hero-new-text .trust-list {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Desktop lead verbergen, mobiele lijst tonen */
@@ -1319,19 +1319,20 @@ textarea { min-height: 140px; resize: vertical; }
 
   .hero-lead-mobile {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
     margin-top: 0.75rem;
   }
   .hero-pills li {
     background: var(--soft);
     color: var(--accent-dark);
     font-weight: 700;
-    font-size: 0.85rem;
-    padding: 0.45rem 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 999px;
     list-style: none;
+    white-space: nowrap;
   }
 
   /* Volgorde: eerst alle voordelen, dan pas de knop */
