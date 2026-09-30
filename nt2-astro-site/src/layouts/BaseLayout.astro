@@ -25,9 +25,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="apple-touch-icon" href="/favicon.png" />
 
     <!-- Fonts (Fraunces + IBM Plex Sans, gebruikt op bedrijven-/particulieren-/steden-pagina's) -->
+    <!-- Asynchroon geladen zodat dit het eerste renderen van de pagina niet blokkeert -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" />
+    </noscript>
 
     <!-- Open Graph / Social media -->
     <meta property="og:title" content={title} />
