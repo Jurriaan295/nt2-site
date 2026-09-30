@@ -19,8 +19,19 @@ interface Props {
 }
 
 const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo, about } = Astro.props;
+
+const faqSchema = faq && {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.items.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 <BaseLayout title={title} description={description}>
+  {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
   <div class="pg">
     <section>
       <div class="container">
