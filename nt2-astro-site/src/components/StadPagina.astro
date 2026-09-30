@@ -26,7 +26,7 @@ const { title, description, werkgebied, stad, h1, lead, sectors, showStats, part
       <div class="container">
         <span class="eyebrow" style="text-align:center;display:block;">{werkgebied}</span>
         <h1 style="text-align:center;max-width:none;">{h1}</h1>
-        <p class="lead" style="text-align:center;max-width:640px;margin:0 auto;">{lead}</p>
+        <p class="lead hero-lead" style="text-align:center;max-width:640px;margin:0 auto;">{lead}</p>
 
         <div class="about-block" style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line);">
           <div class="about-photo">
@@ -36,7 +36,7 @@ const { title, description, werkgebied, stad, h1, lead, sectors, showStats, part
             <p class="muted-label about-label">Over de docent</p>
             <h2 style="margin-bottom:.3rem;">Kristina Tjalsma</h2>
             <p class="lead" style="font-size:.95rem;margin-bottom:.8rem;">Docent Nederlandse les op locatie in {stad}</p>
-            <p>{about.intro}</p>
+            <p class="about-intro">{about.intro}</p>
             <ul class="docent-list" style="margin-top:1rem;">
               {about.checklist.map(item => <li>{item}</li>)}
             </ul>
@@ -142,10 +142,12 @@ const { title, description, werkgebied, stad, h1, lead, sectors, showStats, part
   @media (max-width:700px){
     .about-block{grid-template-columns:1fr;text-align:center;}
     .about-label{text-align:center;}
-    .about-photo{width:160px;margin:0 auto;}
+    .about-photo{width:210px;margin:0 auto;}
+    .about-intro{text-align:left;}
     .docent-list{align-items:center;}
     .docent-list li{display:flex;justify-content:center;padding-left:0;}
     .docent-list li::before{position:static;margin-right:.5rem;}
+    .hero-lead{text-align:left !important;margin-left:0 !important;margin-right:0 !important;}
   }
   .docent-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
   .docent-list li{font-size:.92rem;padding-left:1.4rem;position:relative;color:#4a341d;}
