@@ -1,7 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://taaldiewerkt.nl/' },
+    { '@type': 'ListItem', position: 2, name: 'Voor bedrijven', item: 'https://taaldiewerkt.nl/nt2-voor-bedrijven/' },
+  ],
+};
 ---
 <BaseLayout title="Incompany Nederlandse les op de werkvloer | Voor bedrijven" description="Incompany Nederlandse les op locatie voor bedrijven in Friesland en Nederland. Taaltraining voor anderstalige medewerkers, direct toepasbaar op de werkvloer.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <svg width="0" height="0" style="position:absolute;">
     <defs>

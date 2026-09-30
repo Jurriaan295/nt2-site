@@ -16,9 +16,27 @@ interface Props {
   faq?: { title: string; items: { q: string; a: string }[] };
   meerInfo: { href: string; label: string }[];
   about: { intro: string; checklist: string[] };
+  breadcrumbParent?: { label: string; href: string };
 }
 
-const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo, about } = Astro.props;
+const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo, about, breadcrumbParent } = Astro.props;
+
+const siteUrl = 'https://taaldiewerkt.nl';
+const breadcrumbItems = [
+  { name: 'Home', item: `${siteUrl}/` },
+  ...(breadcrumbParent ? [{ name: breadcrumbParent.label, item: `${siteUrl}${breadcrumbParent.href}` }] : []),
+  { name: `Nederlandse les in ${stad}`, item: `${siteUrl}${Astro.url.pathname}` },
+];
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.name,
+    item: crumb.item,
+  })),
+};
 
 const faqSchema = faq && {
   '@context': 'https://schema.org',
@@ -31,6 +49,7 @@ const faqSchema = faq && {
 };
 ---
 <BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
   <div class="pg">
     <section>
