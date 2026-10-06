@@ -120,6 +120,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
         if (res.ok) {
+          // Kopie naar het aanvragen-dashboard; een fout hier mag de bezoeker niet storen.
+          fetch('https://aanvragen-dashboard.vercel.app/api/inquiries', {
+            method: 'POST',
+            body: data,
+            keepalive: true,
+          }).catch(() => {});
           form.style.display = 'none';
           if (success) success.style.display = 'block';
           card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
