@@ -112,28 +112,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       const data = new FormData(form);
 
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { Accept: 'application/json' },
-        });
+      // Verborgen zakelijke velden horen niet bij een particuliere aanvraag.
+      if ((data.get('type-klant') as string) !== 'Zakelijk') {
+        ['organisatie', 'locatie', 'deelnemers', 'type-aanvraag'].forEach((k) => data.delete(k));
+      }
 
-        if (res.ok) {
-          // Kopie naar het aanvragen-dashboard; een fout hier mag de bezoeker niet storen.
-          fetch('https://aanvragen-dashboard.vercel.app/api/inquiries', {
-            method: 'POST',
-            body: data,
-            keepalive: true,
-          }).catch(() => {});
-          form.style.display = 'none';
-          if (success) success.style.display = 'block';
-          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          alert('Er is iets misgegaan. Probeer het opnieuw of stuur een e-mail.');
-        }
-      } catch {
-        alert('Er is iets misgegaan. Controleer je internetverbinding.');
+      // De aanvraag gaat naar het dashboard én naar Formspree (mailmelding).
+      // Het lukt als minstens één van beide de aanvraag heeft ontvangen.
+      const send = (url: string, init: RequestInit) =>
+        fetch(url, { method: 'POST', body: data, ...init })
+          .then((res) => res.ok)
+          .catch(() => false);
+
+      const [viaFormspree, viaDashboard] = await Promise.all([
+        send(form.action, { headers: { Accept: 'application/json' } }),
+        send('https://aanvragen-dashboard.vercel.app/api/inquiries', {}),
+      ]);
+
+      if (viaFormspree || viaDashboard) {
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+        card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        alert('Er is iets misgegaan. Controleer je internetverbinding of stuur een e-mail.');
       }
     });
   </script>
