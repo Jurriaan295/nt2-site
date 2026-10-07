@@ -62,6 +62,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Voorkom dubbel versturen: knop uit zolang de aanvraag onderweg is.
+      const button = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      if (button?.disabled) return;
+      const label = button?.textContent ?? '';
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Versturen…';
+      }
+
       const data = new FormData(form);
 
       // De aanvraag gaat naar het dashboard én naar Formspree (mailmelding).
@@ -71,16 +80,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           .then((res) => res.ok)
           .catch(() => false);
 
-      const [viaFormspree, viaDashboard] = await Promise.all([
-        send(form.action, { headers: { Accept: 'application/json' } }),
-        send('https://aanvragen-dashboard.vercel.app/api/inquiries', {}),
-      ]);
+      // De bevestiging komt zodra de eerste van de twee gelukt is; de ander loopt door.
+      const ok = (p: Promise<boolean>) => p.then((v) => (v ? true : Promise.reject()));
+      const sent = await Promise.any([
+        ok(send(form.action, { headers: { Accept: 'application/json' } })),
+        ok(send('https://aanvragen-dashboard.vercel.app/api/inquiries', {})),
+      ]).then(
+        () => true,
+        () => false
+      );
 
-      if (viaFormspree || viaDashboard) {
+      if (sent) {
         form.style.display = 'none';
         if (success) success.style.display = 'block';
         card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
+        if (button) {
+          button.disabled = false;
+          button.textContent = label;
+        }
         alert('Er is iets misgegaan. Controleer je internetverbinding of stuur een e-mail.');
       }
     });
