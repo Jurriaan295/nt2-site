@@ -734,8 +734,10 @@ textarea { min-height: 140px; resize: vertical; }
   pointer-events: auto;
 }
 .contact-fab.open .fab-instagram { transition-delay: 0s; }
-.contact-fab.open .fab-whatsapp  { transition-delay: 0.05s; }
-.contact-fab.open .fab-email     { transition-delay: 0.1s; }
+.contact-fab.open .fab-linkedin  { transition-delay: 0.04s; }
+.contact-fab.open .fab-whatsapp  { transition-delay: 0.08s; }
+.contact-fab.open .fab-email     { transition-delay: 0.12s; }
+.fab-linkedin { background: #0A66C2; }
 .fab-email     { background: #7c3aed; }
 .fab-whatsapp  { background: url('/images/logo6.jpeg') center / cover no-repeat; }
 .fab-instagram { background: url('/images/logo5.jpeg') center / cover no-repeat; }
