@@ -1,11 +1,30 @@
 {
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "nt2-site.vercel.app" }],
+      "destination": "https://taaldiewerkt.nl/$1",
+      "permanent": true
+    },
+    { "source": "/nt2-cursus-friesland", "destination": "/nederlandse-les-friesland/", "permanent": true },
+    { "source": "/nt2-cursus-friesland/", "destination": "/nederlandse-les-friesland/", "permanent": true },
+    { "source": "/nt2-cursus-leeuwarden", "destination": "/nederlandse-les-leeuwarden/", "permanent": true },
+    { "source": "/nt2-cursus-leeuwarden/", "destination": "/nederlandse-les-leeuwarden/", "permanent": true },
+    { "source": "/nt2-cursus-op-locatie", "destination": "/nt2-voor-bedrijven/", "permanent": true },
+    { "source": "/nt2-cursus-op-locatie/", "destination": "/nt2-voor-bedrijven/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
     }
   ]
 }

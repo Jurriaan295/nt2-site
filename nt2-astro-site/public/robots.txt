@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-# Geen indexering van redirect-pagina's
-Disallow: /nt2-cursus-friesland
-Disallow: /nt2-cursus-leeuwarden
-Disallow: /nt2-cursus-op-locatie
-
 Sitemap: https://taaldiewerkt.nl/sitemap.xml
