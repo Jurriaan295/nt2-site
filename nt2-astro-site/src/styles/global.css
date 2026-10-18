@@ -441,13 +441,13 @@ textarea { min-height: 140px; resize: vertical; }
 .kpi-strip .kpi { text-align: center; flex: 1; min-width: 120px; }
 .kpi-strip .kpi .bedrijven-icon { margin-bottom: 0.6rem; }
 .kpi-strip .kpi span {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   display: block;
 }
-.kpi-strip .kpi strong { font-size: 1.9rem; color: var(--accent); display: block; line-height: 1; margin-top: 0.35rem; }
+.kpi-strip .kpi strong { font-size: 1.4rem; color: var(--accent); display: block; line-height: 1.1; margin-top: 0.35rem; }
 .kpi-divider {
   width: 1px;
   height: 3rem;
@@ -511,6 +511,9 @@ textarea { min-height: 140px; resize: vertical; }
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5rem;
+}
+.resultaten-check-list li {
+  border: 2px solid #a78bfa;
 }
 
 /* ── CTA strip versterkt ── */
@@ -764,7 +767,7 @@ textarea { min-height: 140px; resize: vertical; }
   }
   .kpi-strip .kpi .bedrijven-icon { width: 34px; height: 34px; margin: 0 auto 0.5rem; }
   .kpi-strip .kpi .bedrijven-icon svg { width: 18px; height: 18px; }
-  .kpi-strip .kpi strong { font-size: 1.4rem; margin-top: 0.25rem; }
+  .kpi-strip .kpi strong { font-size: 1.2rem; margin-top: 0.25rem; }
   .kpi-strip .kpi span { font-size: 0.7rem; }
   .kpi-strip .kpi:nth-child(1),
   .kpi-strip .kpi:nth-child(5) {
@@ -1265,7 +1268,7 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* Resultaten blokken: zelfde paarse border als about-check-list */
   .resultaten-check-list li {
-    border: 1px solid #7c3aed;
+    border: 2px solid #7c3aed;
   }
 
   /* H1 zo breed mogelijk — vw-gebaseerd, nooit 3 regels */
