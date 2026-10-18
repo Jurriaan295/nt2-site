@@ -13,13 +13,14 @@ interface Props {
   particulieren: { title: string; paragraphs: string[]; note?: string };
   bedrijven: { title: string; paragraphs: string[]; note?: string };
   maatwerk: { title: string; paragraphs: string[] };
+  praktisch?: { title: string; items: { label: string; text: string }[] };
   faq?: { title: string; items: { q: string; a: string }[] };
   meerInfo: { href: string; label: string }[];
   about: { intro: string; checklist: string[] };
   breadcrumbParent?: { label: string; href: string };
 }
 
-const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, faq, meerInfo, about, breadcrumbParent } = Astro.props;
+const { title, description, werkgebied, stad, h1, lead, sectors, showStats, particulieren, bedrijven, maatwerk, praktisch, faq, meerInfo, about, breadcrumbParent } = Astro.props;
 
 const siteUrl = 'https://taaldiewerkt.nl';
 const breadcrumbItems = [
@@ -107,6 +108,20 @@ const faqSchema = faq && {
           <h2>{maatwerk.title}</h2>
           {maatwerk.paragraphs.map(p => <p class="lead" style="font-size:.95rem;">{p}</p>)}
         </div>
+
+        {praktisch && (
+          <div style="margin-top:2.5rem;">
+            <p class="muted-label">{praktisch.title}</p>
+            <div class="faq-list">
+              {praktisch.items.map(item => (
+                <div class="faq-item">
+                  <h3>{item.label}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {faq && (
           <div style="margin-top:2.5rem;">
