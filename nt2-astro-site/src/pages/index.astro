@@ -34,8 +34,8 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
           <li>Direct toepasbaar</li>
         </ul>
         <div class="btn-row hero-btn-row" style="margin-top: 2rem;">
-          <a class="btn btn-primary btn-lg hero-btn-offerte" href="/offerte-aanvragen/">Offerte aanvragen</a>
-          <a class="btn btn-ghost hero-btn-contact" href="/contact/">Neem contact op</a>
+          <a class="btn btn-primary btn-lg hero-btn-offerte" href="/offerte-aanvragen/">Plan een kennismaking</a>
+          <a class="btn btn-ghost hero-btn-contact" href="#voor-wie">Bekijk de lessen</a>
         </div>
         <ul class="trust-list">
           <li><span class="trust-icon">✓</span> Op locatie in Friesland &amp; heel Nederland</li>
@@ -46,27 +46,30 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
       <div class="hero-new-image">
         <img
           src="/images/kristina.webp"
+          srcset="/images/kristina.webp 900w, /images/kristina-2x.webp 1800w"
+          sizes="(max-width: 900px) 100vw, 540px"
           alt="Nederlands leren op locatie in Friesland bij Kristina Tjalsma"
           class="hero-portrait"
           width="540"
           height="620"
           fetchpriority="high"
         />
+        <div class="hero-naamkaart"><strong>Kristina Tjalsma</strong><span>Gecertificeerd NT2-docent</span></div>
       </div>
     </div>
   </section>
 
   <!-- DOELGROEPEN -->
-  <section class="section bg-soft doelgroepen-section">
+  <section class="section bg-soft doelgroepen-section" id="voor-wie">
     <div class="container">
       <p class="eyebrow text-center doelgroepen-eyebrow">Voor wie?</p>
-      <h2 class="text-center doelgroepen-h2" style="margin-bottom: 2.5rem;">Nederlands leren op maat voor uw situatie</h2>
+      <h2 class="text-center doelgroepen-h2" style="margin-bottom: 2.5rem;">Nederlands leren op maat voor jouw situatie</h2>
       <div class="grid grid-2">
         <article class="surface card card-hover card-accent-purple">
           <div class="card-body">
             <h3>Voor bedrijven</h3>
             <p>Incompany Nederlandse les voor anderstalige medewerkers in techniek, logistiek, zorg en productie. Gericht op communicatie, veiligheid en samenwerking op de werkvloer.</p>
-            <a href="/nt2-voor-bedrijven/" class="card-link">Meer voor bedrijven →</a>
+            <a href="/nt2-voor-bedrijven/" class="btn btn-ghost">Meer voor bedrijven →</a>
           </div>
         </article>
 
@@ -74,7 +77,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
           <div class="card-body">
             <h3>Voor particulieren</h3>
             <p>Persoonlijke begeleiding voor expats en anderstaligen die werken aan hun inburgering of Nederlands willen leren, op een tempo en locatie die bij hen past.</p>
-            <a href="/nt2-voor-particulieren/" class="card-link">Meer voor particulieren →</a>
+            <a href="/nt2-voor-particulieren/" class="btn btn-ghost">Meer voor particulieren →</a>
           </div>
         </article>
       </div>
@@ -112,7 +115,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
           <li>Persoonlijke intake en maatwerk lesplan</li>
         </ul>
         <div class="btn-row about-btn-row" style="margin-top: 1.75rem;">
-          <a class="btn btn-primary about-offerte-btn" href="/offerte-aanvragen/">Offerte aanvragen</a>
+          <a class="btn btn-primary about-offerte-btn" href="/offerte-aanvragen/">Plan een kennismaking</a>
           <a class="btn btn-secondary howworks-desktop" href="/nt2-voor-bedrijven/">Meer voor bedrijven</a>
         </div>
       </div>
@@ -170,7 +173,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
     <div class="container surface kpi-strip">
       <div class="kpi">
         <div class="bedrijven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <span class="muted">Ideale groepsgrootte</span>
         <strong>4–12</strong>
@@ -178,7 +181,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
       <div class="kpi-divider"></div>
       <div class="kpi">
         <div class="bedrijven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
         <span class="muted">Gemiddelde opstarttijd</span>
         <strong>1–4 weken</strong>
@@ -186,7 +189,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
       <div class="kpi-divider"></div>
       <div class="kpi">
         <div class="bedrijven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         </div>
         <span class="muted">Alle niveaus</span>
         <strong>A0–C1</strong>
@@ -194,7 +197,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
       <div class="kpi-divider"></div>
       <div class="kpi">
         <div class="bedrijven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <span class="muted">Werkgebied</span>
         <strong>Friesland &amp; NL</strong>
@@ -211,7 +214,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <div class="surface card step-card">
           <div class="step-icon-wrap">
             <div class="bedrijven-icon step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             </div>
             <span class="step-badge">1</span>
           </div>
@@ -221,7 +224,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <div class="surface card step-card">
           <div class="step-icon-wrap">
             <div class="bedrijven-icon step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
             <span class="step-badge">2</span>
           </div>
@@ -231,7 +234,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <div class="surface card step-card">
           <div class="step-icon-wrap">
             <div class="bedrijven-icon step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <span class="step-badge">3</span>
           </div>
@@ -241,7 +244,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <div class="surface card step-card">
           <div class="step-icon-wrap">
             <div class="bedrijven-icon step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
             </div>
             <span class="step-badge">4</span>
           </div>
@@ -281,7 +284,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <h2 class="snel-h2">Klaar om te starten?</h2>
         <p>In de meeste gevallen kan een traject binnen 1 tot 4 weken starten. Na een korte inventarisatie plannen we een intake en maken we een passend lesprogramma.</p>
         <div class="btn-row snel-btn-row">
-          <a class="btn btn-primary btn-lg snel-offerte-btn" href="/offerte-aanvragen/">Offerte aanvragen</a>
+          <a class="btn btn-primary btn-lg snel-offerte-btn" href="/offerte-aanvragen/">Plan een kennismaking</a>
         </div>
       </div>
     </div>
@@ -310,7 +313,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
           <p>De ideale groepsgrootte ligt tussen 4 en 12 deelnemers, maar individuele lessen zijn ook mogelijk. Grotere groepen kunnen in overleg ook worden georganiseerd.</p>
         </article>
       </div>
-      <p style="margin-top: 1.5rem; text-align: center;"><a href="/faq/">Bekijk alle veelgestelde vragen →</a></p>
+      <p style="margin-top: 1.5rem; text-align: center;"><a class="btn btn-ghost" href="/faq/">Bekijk alle veelgestelde vragen →</a></p>
     </div>
   </section>
 
@@ -322,7 +325,7 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
         <p class="muted cta-final-p" style="margin-bottom: 0;">Ik denk graag mee over een traject dat past bij jouw organisatie of situatie. Reactie binnen 24 uur.</p>
       </div>
       <div class="btn-row cta-final-btn-row">
-        <a class="btn btn-primary" href="/offerte-aanvragen/">Vraag een offerte aan</a>
+        <a class="btn btn-primary" href="/offerte-aanvragen/">Plan een kennismaking</a>
         <a class="btn btn-ghost" href="/contact/">Neem contact op</a>
       </div>
     </div>
@@ -341,7 +344,6 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
   if (track && window.matchMedia('(max-width: 900px)').matches) {
     const slides = track.querySelectorAll('.review-slide');
     let current  = 0;
-    let timer: ReturnType<typeof setInterval>;
 
     function goTo(index: number) {
       current = (index + slides.length) % slides.length;
@@ -349,27 +351,16 @@ const description = 'Nederlands leren op locatie voor bedrijven en particulieren
       dots.forEach((d, i) => d.classList.toggle('active', i === current));
     }
 
-    function startAuto() {
-      timer = setInterval(() => goTo(current + 1), 4000);
-    }
-
-    function resetAuto() {
-      clearInterval(timer);
-      startAuto();
-    }
-
     // Initieel: eerste dot actief
     goTo(0);
-    startAuto();
 
-    prev?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
-    next?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+    prev?.addEventListener('click', () => { goTo(current - 1); });
+    next?.addEventListener('click', () => { goTo(current + 1); });
 
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         const idx = parseInt((dot as HTMLElement).dataset.index ?? '0');
         goTo(idx);
-        resetAuto();
       });
     });
   }

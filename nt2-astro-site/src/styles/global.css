@@ -1,12 +1,12 @@
 :root {
-  --bg: #f7f8fa;
+  --bg: #faf8ff;
   --surface: #ffffff;
   --text: #18303a;
   --muted: #53636b;
-  --line: #d9e1e5;
-  --accent: #0f6c7c;
-  --accent-dark: #0b5360;
-  --soft: #eaf4f6;
+  --line: #e6e0f2;
+  --accent: #7c3aed;
+  --accent-dark: #6d28d9;
+  --soft: #f3e8ff;
   --max: 1120px;
   --radius: 18px;
   --shadow: 0 10px 30px rgba(24, 48, 58, 0.08);
@@ -14,17 +14,17 @@
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #9333ea #f0e8ff;
+  scrollbar-color: #7c3aed #f3e8ff;
   scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0e8ff;
+  background: #f3e8ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #9333ea;
+  background: #7c3aed;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -96,7 +96,7 @@ p { margin: 0 0 1rem; }
 }
 .hero-panel {
   padding: 2rem;
-  background: linear-gradient(180deg, #ffffff, #f6fafb);
+  background: linear-gradient(180deg, #ffffff, #faf8ff);
 }
 .badge-list, .check-list { padding: 0; margin: 1rem 0 0; list-style: none; display: grid; gap: 0.7rem; }
 .badge-list li, .check-list li {
@@ -198,7 +198,7 @@ textarea { min-height: 140px; resize: vertical; }
 .site-footer {
   margin-top: 3rem;
   padding: 1.5rem 0;
-  background: #2d1457;
+  background: #3e0e7a;
   border-top: none;
 }
 .site-footer h3 {
@@ -326,9 +326,9 @@ textarea { min-height: 140px; resize: vertical; }
 ═══════════════════════════════════════════ */
 
 :root {
-  --accent-soft: #e6f4f6;
-  --accent-mid: #1a8a9c;
-  --warm: #f9f7f4;
+  --accent-soft: #f3e8ff;
+  --accent-mid: #7c3aed;
+  --warm: #faf8ff;
   --radius-sm: 12px;
   --radius-lg: 24px;
   --shadow-md: 0 16px 40px rgba(24, 48, 58, 0.11);
@@ -345,7 +345,7 @@ textarea { min-height: 140px; resize: vertical; }
 .btn-lg { padding: 1rem 1.75rem; font-size: 1.05rem; }
 .btn-ghost {
   background: transparent;
-  border: 2px solid rgba(15, 108, 124, 0.35);
+  border: 2px solid rgba(124, 58, 237, 0.4);
   color: var(--accent);
   font-weight: 700;
   min-height: 46px;
@@ -359,8 +359,7 @@ textarea { min-height: 140px; resize: vertical; }
 /* ── HERO nieuw ── */
 .hero-new {
   padding: 5rem 0 4rem;
-  background: linear-gradient(160deg, #f0f8fa 0%, #f7f8fa 60%);
-  border-bottom: 1px solid var(--line);
+  background: transparent;
 }
 .hero-new-grid {
   display: grid;
@@ -482,22 +481,22 @@ textarea { min-height: 140px; resize: vertical; }
 
 /* ── Kaart met accentachtergrond ── */
 .card-accent {
-  background: linear-gradient(145deg, #f0f8fa, #e6f4f6);
-  border-color: #b8dde4;
+  background: linear-gradient(145deg, #f3e8ff, #f3e8ff);
+  border-color: rgba(124, 58, 237, 0.25);
 }
 
 /* ── Doelgroepkaarten zonder afbeelding: subtiele paarse achtergrond ── */
 .card-accent-purple {
-  background: linear-gradient(145deg, #f6f1ff, #efe4ff);
-  border-color: #ddc9fa;
+  background: linear-gradient(145deg, #f3e8ff, #f3e8ff);
+  border-color: rgba(124, 58, 237, 0.25);
 }
 
 /* ── Resultaten sectie: volle breedte, tekst centraal, paarse accent-achtergrond ── */
 .resultaten-panel {
   max-width: 760px;
   margin: 0 auto;
-  background: linear-gradient(145deg, #f6f1ff, #efe4ff);
-  border: 1px solid #ddc9fa;
+  background: linear-gradient(145deg, #f3e8ff, #f3e8ff);
+  border: 1px solid rgba(124, 58, 237, 0.25);
   border-radius: var(--radius-lg);
   padding: 3rem 2.75rem;
 }
@@ -513,12 +512,12 @@ textarea { min-height: 140px; resize: vertical; }
   margin-top: 1.5rem;
 }
 .resultaten-check-list li {
-  border: 2px solid #a78bfa;
+  border: 2px solid #7c3aed;
 }
 
 /* ── CTA strip versterkt ── */
 .cta-strip-strong {
-  background: linear-gradient(135deg, #0f6c7c, #0b5360);
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
   border: none;
   border-radius: var(--radius-lg);
 }
@@ -537,7 +536,7 @@ textarea { min-height: 140px; resize: vertical; }
   background: #fff;
   color: var(--accent-dark);
 }
-.cta-strip-strong .btn-primary:hover { background: #e6f4f6; }
+.cta-strip-strong .btn-primary:hover { background: #f3e8ff; }
 
 /* ── Meer informatie links ── */
 .meer-info-list {
@@ -641,14 +640,14 @@ textarea { min-height: 140px; resize: vertical; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #9333ea;
+  background: #7c3aed;
   flex-shrink: 0;
 }
 @media (max-width: 600px) {
   .praktisch-list { grid-template-columns: 1fr; }
 }
 .bedrijven-quote {
-  border-left: 3px solid #9333ea;
+  border-left: 3px solid #7c3aed;
   padding: 1rem 1.25rem;
   background: var(--surface);
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -672,7 +671,7 @@ textarea { min-height: 140px; resize: vertical; }
   text-align: center;
 }
 .bedrijven-cta p {
-  color: #6b21a8;
+  color: #3e0e7a;
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
@@ -1257,8 +1256,8 @@ textarea { min-height: 140px; resize: vertical; }
 
   /* Afsluitende CTA sectie: zelfde mint-achtergrond als "Klaar om te starten?" */
   .cta-strip-strong {
-    background: linear-gradient(145deg, #f0f8fa, #e6f4f6);
-    border: 1px solid #b8dde4;
+    background: linear-gradient(145deg, #f3e8ff, #f3e8ff);
+    border: 1px solid rgba(124, 58, 237, 0.25);
   }
   .cta-strip-strong h2,
   .cta-strip-strong p { color: inherit; }
@@ -1432,4 +1431,179 @@ textarea { min-height: 140px; resize: vertical; }
     bottom: 0.75rem;
     max-width: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ONTWERPSYSTEEM v2 — paars + donkerblauw + lila-wit
+   Eén accent (paars), één kleurwereld voor alle pagina's,
+   duidelijke primaire en tweede knop, zichtbare focus,
+   voldoende contrast. Zie rapport hoofdstuk 10 en 11.
+═══════════════════════════════════════════════════════════ */
+:root {
+  --text: #18303a;
+  --muted: #53636b;
+  --accent-deep: #3e0e7a;
+  --input-border: #6b7785;
+  --shadow-sm: 0 1px 2px rgba(24, 48, 58, 0.06), 0 4px 12px rgba(62, 14, 122, 0.06);
+}
+
+/* Lettertypes: één systeem voor de hele site (Fraunces + IBM Plex Sans) */
+body { font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -0.01em; }
+.site-footer h3, .cookie-banner h3, .footer-grid h3 { font-family: inherit; letter-spacing: 0.04em; }
+
+/* Primaire knop: paars, witte tekst (5,7:1) */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(62, 14, 122, 0.25), 0 6px 14px rgba(124, 58, 237, 0.22);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(62, 14, 122, 0.28), 0 10px 20px rgba(124, 58, 237, 0.26); }
+.btn-primary:active { transform: translateY(0); }
+
+/* Tweede knop: wit met paarse rand en donkerpaarse tekst */
+.btn-ghost, .btn-secondary, .btn-outline {
+  background: #fff;
+  border: 2px solid var(--accent);
+  color: var(--accent-deep);
+  font-weight: 700;
+  box-shadow: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-ghost:hover, .btn-secondary:hover, .btn-outline:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-dark);
+  color: var(--accent-deep);
+  transform: translateY(-1px);
+}
+.btn-ghost:active, .btn-secondary:active, .btn-outline:active { transform: translateY(0); }
+
+/* Zichtbare toetsenbordfocus */
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.site-header :focus-visible, .site-footer :focus-visible, .cta-strip-strong :focus-visible, .mobile-bar :focus-visible { outline-color: #fff; }
+
+/* Invoervelden: rand met voldoende contrast (4,6:1) */
+input, textarea, select { border: 1px solid var(--input-border); }
+input:focus-visible, textarea:focus-visible, select:focus-visible { border-color: var(--accent); outline-offset: 0; }
+
+/* Links in lopende tekst zijn onderstreept (niet alleen gekleurd) */
+p a:not(.btn):not(.card-link), li a:not(.btn):not(.card-link):not([class]), .faq-item a { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Opsommingsblokken (Over de docent, Resultaten): wit met zachte paarse rand */
+.about-check-list li, .resultaten-check-list li {
+  background: #fff;
+  border: 1.5px solid rgba(124, 58, 237, 0.35);
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Afsluitende banner: één effen donkerpaars vlak, geen verloop */
+.cta-strip-strong, .cta-strip-strong.surface { background: var(--accent-deep); border: none; color: #fff; }
+.cta-strip-strong h2, .cta-strip-strong p, .cta-strip-strong .muted { color: #fff; }
+.cta-strip-strong .btn-primary { background: #fff; color: var(--accent-deep); box-shadow: none; }
+.cta-strip-strong .btn-primary:hover { background: var(--accent-soft); color: var(--accent-deep); }
+.cta-strip-strong .btn-ghost { background: transparent; border-color: rgba(255, 255, 255, 0.7); color: #fff; }
+.cta-strip-strong .btn-ghost:hover { background: rgba(255, 255, 255, 0.14); border-color: #fff; color: #fff; }
+
+/* Cookiemelding: weigeren en accepteren even duidelijk */
+.cookie-banner-actions .btn,
+.cookie-banner-actions .btn-primary,
+.cookie-banner-actions .btn-secondary {
+  background: #fff;
+  color: var(--accent-deep);
+  border: 2px solid var(--accent);
+  box-shadow: none;
+  flex: 1;
+}
+.cookie-banner-actions .btn:hover { background: var(--accent-soft); transform: none; }
+
+/* Zwevend contactmenu: alleen e-mail en WhatsApp; wijkt uit voor de cookiemelding */
+.contact-fab-item.fab-linkedin, .contact-fab-item.fab-instagram { display: none; }
+@media (max-width: 520px) {
+  body:has(#cookieBanner:not([hidden])) .contact-fab { bottom: 12.5rem; }
+}
+
+/* ── Telefoon: tekst en actie eerst, daarna foto en voordelen ── */
+@media (max-width: 900px) {
+  .hero-new-image { order: 2; }
+  .hero-portrait { height: 260px; }
+  .hero-new-text { display: flex; flex-direction: column; }
+  .hero-btn-offerte { display: inline-flex; }
+  .hero-btn-row { order: 3; flex-direction: column; align-items: stretch; gap: 0.75rem; max-width: 340px; width: 100%; margin: 1.25rem auto 0 !important; }
+  .hero-btn-row .btn { width: 100%; }
+  .hero-new-text .trust-list { order: 4; margin-top: 1.5rem; }
+  .hero-divider { display: none; }
+  .hero-label-top, .hero-label-sub { letter-spacing: 0.06em; }
+
+  /* alle knoppen op telefoon in dezelfde stijl als op desktop */
+  .about-offerte-btn {
+    background: var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    color: #fff !important;
+    box-shadow: 0 1px 2px rgba(62, 14, 122, 0.25), 0 6px 14px rgba(124, 58, 237, 0.22) !important;
+  }
+  .about-offerte-btn:hover { background: var(--accent-dark) !important; transform: none; }
+  .hero-btn-contact {
+    background: #fff;
+    border: 2px solid var(--accent);
+    color: var(--accent-deep);
+    box-shadow: none;
+  }
+  .hero-btn-contact:hover { background: var(--accent-soft); transform: none; }
+
+  /* minder lege ruimte tussen de secties */
+  .section:not(.doelgroepen-section):not(.about-kristina-section) { padding: 2.5rem 0; }
+  .section-tight:not(.kpi-section) { padding: 1.75rem 0; }
+}
+
+/* Footer: links zonder onderstreping (alleen bij hover) */
+.site-footer a, .footer-links a { text-decoration: none; }
+.site-footer a:hover, .footer-links a:hover { text-decoration: underline; }
+.site-footer a, .site-footer li a:not(.btn):not(.card-link):not([class]) { text-decoration: none; }
+.site-footer a:hover, .site-footer li a:not(.btn):not(.card-link):not([class]):hover { text-decoration: underline; }
+
+/* Portretfoto in de hero: uitsnede gericht op gezicht en schouders (echte foto, geen decoratie) */
+.hero-portrait { object-position: 62% 12%; }
+@media (max-width: 900px) { .hero-portrait { object-position: 60% 18%; } }
+
+/* ── Hero: naamkaartje op de foto en rustiger telefoonweergave ── */
+.hero-new-image { position: relative; }
+.hero-naamkaart {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 0.55rem 0.9rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.hero-naamkaart strong { font-family: "Fraunces", Georgia, serif; font-size: 0.98rem; color: var(--text); }
+.hero-naamkaart span { font-size: 0.78rem; color: var(--muted); }
+.contact-fab { transition: opacity 0.25s ease, transform 0.25s ease; }
+
+@media (max-width: 900px) {
+  /* geen dubbele kop: de H1 zegt al wat er wordt aangeboden */
+  .hero-eyebrow-mobile { display: none; }
+  .hero-pills { display: none; }
+  .hero-lead-desktop { display: block; text-align: center; font-size: 1.05rem; max-width: 30em; margin: 0.9rem auto 0; }
+  /* de kenmerken staan verderop al in de kengetallen */
+  .hero-new-text .trust-list { display: none; }
+  /* foto: staand formaat in plaats van breed */
+  .hero-new-image { max-width: 340px; width: 100%; margin: 1.75rem auto 0; }
+  .hero-portrait { height: auto; aspect-ratio: 4 / 5; object-position: 60% 18%; }
+  /* zwevend contactmenu kleiner en pas zichtbaar na scrollen */
+  .contact-fab { bottom: 1rem; }
+  .contact-fab-main { width: 48px; height: 48px; }
+  .contact-fab.fab-wacht { opacity: 0; pointer-events: none; transform: translateY(10px); }
+}
+@media (max-width: 900px) {
+  .hero-new-grid { gap: 1.25rem; }
+  .hero-new-image { margin-top: 0.5rem; }
+  .hero-new { padding-bottom: 0.5rem; }
+  .doelgroepen-section { padding-top: 2rem; }
 }
